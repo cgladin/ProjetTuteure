@@ -1,0 +1,18 @@
+{
+  "connection": "default",
+  "collectionName": "trajets",
+  "info": {
+    "name": "trajet",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "listeRue": {
+      "type": "richtext"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "connection": "default",
+  "collectionName": "groupes",
+  "info": {
+    "name": "groupe",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "trajets": {
+      "collection": "trajet"
+    },
+    "nomGroupe": {
+      "type": "string"
+    }
+  }
+}

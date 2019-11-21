@@ -1,0 +1,25 @@
+{
+  "connection": "default",
+  "collectionName": "prestations",
+  "info": {
+    "name": "prestation",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "lieus": {
+      "collection": "lieu",
+      "via": "prestation"
+    },
+    "nom": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

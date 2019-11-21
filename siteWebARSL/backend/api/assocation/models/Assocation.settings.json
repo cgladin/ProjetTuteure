@@ -1,0 +1,34 @@
+{
+  "connection": "default",
+  "collectionName": "restaurants",
+  "info": {
+    "name": "assocation",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "nom": {
+      "type": "string"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "lieu": {
+      "model": "lieu",
+      "via": "assocation"
+    },
+    "personnes": {
+      "collection": "personne",
+      "via": "assocation"
+    }
+  }
+}

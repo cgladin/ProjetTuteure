@@ -1,0 +1,48 @@
+{
+  "connection": "default",
+  "collectionName": "formulaires",
+  "info": {
+    "name": "formulaire",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "nom": {
+      "type": "string"
+    },
+    "prenom": {
+      "type": "string"
+    },
+    "Lieu": {
+      "type": "text"
+    },
+    "infoFamille": {
+      "type": "richtext"
+    },
+    "nationalite": {
+      "type": "string"
+    },
+    "grossesse": {
+      "type": "boolean"
+    },
+    "problemeDeSante": {
+      "type": "richtext"
+    },
+    "autre": {
+      "type": "richtext"
+    },
+    "dejaConnu": {
+      "type": "boolean"
+    },
+    "demandeHebergement": {
+      "type": "boolean"
+    },
+    "demandeAcceptee": {
+      "type": "boolean"
+    }
+  }
+}
