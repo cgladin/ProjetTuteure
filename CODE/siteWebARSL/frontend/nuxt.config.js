@@ -23,15 +23,12 @@ export default {
   ** Global CSS
   */
   css: [
-  "uikit/dist/css/uikit.min.css",
-  "uikit/dist/css/uikit.css",
-],
-/*
-** Plugins to load before mounting the App
-*/
-plugins: [
-  { src: '~/plugins/uikit.js', ssr: false }
-],
+  ],
+  /*
+  ** Plugins to load before mounting the App
+  */
+  plugins: [
+  ],
   /*
   ** Nuxt.js dev-modules
   */
@@ -41,15 +38,7 @@ plugins: [
   ** Nuxt.js modules
   */
   modules: [
-  '@nuxtjs/apollo',
   ],
-  apollo: {
-  clientConfigs: {
-    default: {
-      httpEndpoint: 'http://localhost:1337/graphql'
-    }
-   }
-  },
   /*
   ** Build configuration
   */

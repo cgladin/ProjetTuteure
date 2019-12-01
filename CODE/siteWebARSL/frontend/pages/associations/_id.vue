@@ -32,23 +32,3 @@
 </div>
 </template>
 
-<script>
-import restaurantQuery from '~/apollo/queries/restaurant/restaurant'
-
-export default {
-  data() {
-    return {
-      restaurant: Object
-    }
-  },
-  apollo: {
-    restaurant: {
-      prefetch: true,
-      query: restaurantQuery,
-      variables () {
-        return { id: this.$route.params.id }
-      }
-    }
-  }
-}
-</script>

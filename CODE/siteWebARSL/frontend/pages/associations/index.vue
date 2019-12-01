@@ -30,30 +30,4 @@
 
 </template>
 
-<script>
-import restaurantsQuery from '~/apollo/queries/restaurant/restaurants'
 
-export default {
-  data() {
-    return {
-      // Initialize an empty restaurants variabkle
-      restaurants: [],
-      query: ''
-    }
-  },
-  apollo: {
-    restaurants: {
-      prefetch: true,
-      query: restaurantsQuery
-    }
-  },
-  computed: {
-    // Search system
-    filteredList() {
-      return this.restaurants.filter(restaurant => {
-        return restaurant.name.toLowerCase().includes(this.query.toLowerCase())
-      })
-    },
-  }
-}
-</script>
