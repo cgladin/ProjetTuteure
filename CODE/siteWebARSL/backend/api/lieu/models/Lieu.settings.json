@@ -29,10 +29,6 @@
     "prestation": {
       "model": "prestation",
       "via": "lieus"
-    },
-    "assocation": {
-      "model": "assocation",
-      "via": "lieu"
     }
   }
 }

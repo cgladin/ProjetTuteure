@@ -2,8 +2,10 @@
 <div>
   <div class="title">
       <h1> Vous rencontrez des difficultés sociales ? (absence ou perte de logement, violences conjugales, expulsions...) </h1>
-      <h2> Appelez le 115. </h2>
-      <img src="115.png" alt="115">
+      <div id="appel">
+        <h2> Appelez le </h2>
+        <img src="115.png" alt="115">
+      </div>
   </div>
   <div class="body">
 
@@ -14,9 +16,27 @@
       <h2> Liste des Lieux :</h2>
       <div>
         <h3>Accueil de jour</h3>
-        <div>
-          <!-- Un accueil de jour avec description-->
+        <div class="accueiljour">
+          <h3> Secours Catholique </h3>
+          <p> 23, Rue Charpentier 87 000 LIMOGES </p>
+          <p> 9H-12H  14H-17H </p>
         </div>
+        <div class="accueiljour">
+          <h3> Secours Populaire</h3>
+          <p> 6, Rue Fulton 87 280 LIMOGES</p>
+          <p> 14H-18H </p>
+        </div>
+        <div class="accueiljour">
+          <h3> Restos du Coeur</h3>
+          <p> 87, Rue du Chinchauvaud 87 100 LIMOGES</p>
+          <p> 9H-11H </p>
+        </div>
+        <div class="accueiljour">
+          <h3> Croix Rouge </h3>
+          <p>2, rue Montlhéry 87 100 LIMOGES</p>
+          <p> 14H-17H </p>
+        </div>
+
       </div>
     </div>
   </div>
@@ -32,6 +52,7 @@ export default {
   }
 }
 </script>
+
 <style>
 
 .title {
@@ -46,8 +67,14 @@ export default {
 }
 
 .title h1,h2{
-
+  font-family: OfficinaSansStd-Book, sans-serif;
   color: ;
+}
+#appel{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
 }
 
 .subtitle {
@@ -60,6 +87,11 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+.accueiljour {
+border:  solid 2px;
+padding: 5px;
+margin-top: 5px;
 }
 
 </style>

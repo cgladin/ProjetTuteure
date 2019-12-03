@@ -26,13 +26,13 @@
     "motDePasse": {
       "type": "password"
     },
-    "assocation": {
-      "model": "assocation",
-      "via": "personnes"
-    },
     "annonces": {
       "collection": "annonce",
       "via": "personne"
+    },
+    "assocation": {
+      "model": "assocation",
+      "via": "personnes"
     }
   }
 }

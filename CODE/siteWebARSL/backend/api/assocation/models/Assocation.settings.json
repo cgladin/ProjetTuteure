@@ -22,13 +22,27 @@
       "via": "related",
       "plugin": "upload"
     },
-    "lieu": {
-      "model": "lieu",
-      "via": "assocation"
-    },
     "personnes": {
       "collection": "personne",
       "via": "assocation"
+    },
+    "horaireOuverture": {
+      "type": "date"
+    },
+    "horaireFermeture": {
+      "type": "date"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "adressePostale": {
+      "type": "richtext"
+    },
+    "adresseEmail": {
+      "type": "email"
+    },
+    "telephone": {
+      "type": "integer"
     }
   }
 }
