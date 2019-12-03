@@ -1,0 +1,9 @@
+query Associations {
+  associations {
+    id
+    nom
+    image {
+      url
+    }
+  }
+}
