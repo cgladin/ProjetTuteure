@@ -1,0 +1,21 @@
+{
+  "connection": "default",
+  "collectionName": "rapports",
+  "info": {
+    "name": "rapport",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "formulaires": {
+      "collection": "formulaire"
+    },
+    "Commentaire": {
+      "type": "richtext"
+    }
+  }
+}
