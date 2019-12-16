@@ -1,13 +1,11 @@
 <template>
   <div>
 
-      // Search input to filters associations
       <form class="uk-search uk-search-large uk-align-center uk-margin">
           <span uk-search-icon></span>
-          <input class="uk-search-input" v-model="query" type="search" placeholder="Search...">
+          <input class="uk-search-input" v-model="query" type="search" placeholder="Rechercher...">
       </form>
 
-      // Association cards
       <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@m uk-margin" v-for="association in filteredList" v-bind:key="association" uk-grid>
           <div class="uk-card-media-left uk-cover-container">
               <img :src="'http://localhost:1337/' + association.image.url" alt="" uk-cover>
@@ -15,38 +13,32 @@
           </div>
           <div>
               <div class="uk-card-body">
-                  <h3 class="uk-card-title">{{ association.nom }}</h3>
-                  // Link to the association using router-link
+                  <h3 class="uk-card-title">{{ association.name }}</h3>
+                  <p>{{ association.description }}</p>
                   <router-link :to="{ name: 'associations-id', params: { id: association.id }}" tag="a" class="uk-button uk-button-primary">Voir l'association
                   </router-link>
               </div>
           </div>
       </div>
 
-      // If no associations have been found
-      <div class="uk-container uk-container-center uk-text-center" v-if="filteredList.length == 0">
-       <img src="https://assets-ouch.icons8.com/preview/19/52de2377-696e-4194-8c63-0a81aef60b4f.png" height="800" width="800">
-       <p>No associations found</p>
-     </div>
-
   </div>
 
 </template>
 
 <script>
-// Import the associations query
+// Import the restaurants query
 import associationsQuery from '~/apollo/queries/association/associations'
 
 export default {
   data() {
     return {
-      // Initialize an empty associations variabkle
+      // Initialize an empty restaurants variabkle
       associations: [],
       query: ''
     }
   },
   apollo: {
-    associations: {
+    association: {
       prefetch: true,
       query: associationsQuery
     }
@@ -54,10 +46,34 @@ export default {
   computed: {
     // Search system
     filteredList() {
-      return this.associations.filter(association => {
+      return this.associations.filter(restaurant => {
         return association.name.toLowerCase().includes(this.query.toLowerCase())
       })
     },
+  }
+}
+</script>
+  </client-only>
+</div>
+</template>
+
+<script>
+import associationQuery from '~/apollo/queries/association/associations'
+
+export default {
+  data() {
+    return {
+      association: Object
+    }
+  },
+  apollo: {
+    association: {
+      prefetch: true,
+      query: associationQuery,
+      variables () {
+        return { id: this.$route.params.id }
+      }
+    }
   }
 }
 </script>
