@@ -28,10 +28,7 @@
                       <li><router-link tag="a" class="nav-link" to="/associations" exact>Associations</router-link></li>
                     </li>
                     <li class="nav-item">
-                      <li><router-link tag="a" class="nav-link" to="/associations" exact>se connecter</router-link></li>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Contact</a>
+                      <li><router-link tag="a" class="nav-link" to="/associations" exact>Se connecter</router-link></li>
                     </li>
                   </ul>
                 </div>
