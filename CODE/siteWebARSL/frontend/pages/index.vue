@@ -1,9 +1,6 @@
 <template>
 
 <div>
-  <head>
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-  </head>
   <header class="bg-danger py-5 mb-5">
     <div class="container h-100">
       <div class="row h-100 align-items-center">

@@ -1,0 +1,46 @@
+#texteCarrousel1{
+  font-size: 36px;
+  font-family: candara;
+}
+#texteCarrousel1{
+  font-size: 36px;
+  font-family: candara;
+}
+#carrousel{
+  margin-top: 10px;
+  width: 110%;
+  height: 90%;
+  margin-left: -4%;
+  opacity: 0.9;
+}
+#centquinze{
+  width: 90%;
+  height: 90%;
+  margin-bottom: 42%;
+}
+#boutonAssociation{
+  margin-bottom: 55%;
+}
+#aproprosARSL{
+  margin-top: 5%;
+}
+@media (max-width: 991.98px) {
+
+  #texteCarrousel1{
+    font-size: 16px;
+    margin-bottom: 0%;
+  }
+  #texteCarrousel2{
+    font-size: 20px;
+    font-family: candara;
+  }
+  #centquinze{
+    margin-bottom: 0%;
+    width: 30%;
+    height: 30%;
+  }
+  #boutonAssociation{
+    margin-bottom: 0%;
+    height: 40%;
+  }
+}
