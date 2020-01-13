@@ -15,24 +15,20 @@
       @sliding-start="onSlideStart"
       @sliding-end="onSlideEnd"
     >
-      <b-carousel-slide img-src="1.jpg" class="text-white">
-        <h2 class="text-white">Vous rencontrez des difficultés sociales ? (perte de logement, violences conjugales, expulsions...)</h2>
+      <b-carousel-slide img-src="1.jpg"
+      class="text-white img-fluid responsive">
+        <h2 class="text-white ordi">Vous rencontrez des difficultés sociales ? (perte de logement, violences conjugales, expulsions...)</h2>
+        <h3 class="text-white tel">Vous rencontrez des difficultés sociales ? Appelez le </h3>
         <div>
-          <h3 class="ml-md-auto text-white"> Appelez le </h3>
-          <img class="ml-auto" src="/115.png">
+          <h3 class="ml-md-auto text-white ordi"> Appelez le </h3>
+          <img class="ml-auto" id="centquinze" src="/115.png">
         </div>
       </b-carousel-slide>
 
-      <b-carousel-slide>
-        <template v-slot:img>
-          <img
-            class="d-block img-fluid w-100"
-            width="1024"
-            height="200"
-            src="2.jpg"
-            alt="image slot"
-          >
-        </template>
+      <b-carousel-slide img-src="3.jpg"
+      class="text-white img-fluid responsive">
+        <h2 class="text-white ordi">Cliquer pour des informations sur les associations</h2>
+        <h3 class="text-white tel">CLiquer pour des informations sur les associations</h3>
       </b-carousel-slide>
     </b-carousel>
   </div>
@@ -144,7 +140,6 @@ export default {
 </script>
 
 <style>
-
 .title {
   font-weight: 300;
   font-size: 100px;
