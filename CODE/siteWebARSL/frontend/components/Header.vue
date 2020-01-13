@@ -18,7 +18,7 @@
                   <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
 
-                      <div id="google_translate_element"></div>
+                      <div class="translate" id="google_translate_element"></div>
                       <script type="text/javascript">// <![CDATA[
                       function googleTranslateElementInit() {
                       new google.translate.TranslateElement({pageLanguage: 'fr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');

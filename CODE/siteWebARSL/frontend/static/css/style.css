@@ -12,6 +12,10 @@
 .tel {
   display: none;
 }
+.translate {
+  margin-right: 50px;
+  margin-top: 7px;
+}
 @media (max-width: 991.98px) {
   .tel{
     display:block;
