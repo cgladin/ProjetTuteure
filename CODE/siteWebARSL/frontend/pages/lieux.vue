@@ -1,61 +1,59 @@
 <template>
-  <div>
-    <div class="row text-center">
-        <div class="col-sm-3 ml-auto mr-auto">
-            <h1>Liste des lieux d'accueil</h1>
-        </div>
-    </div>
-    <div class="card text-center" id="carte" v-for="lieu in filteredList" v-bind:key="lieu" uk-grid>
-        <div class="uk-card-media-left uk-cover-container">
-        </div>
-        <div>
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">{{ lieu.nom }}</h3>
-                <p>{{ lieu.description }}</p>
-                <p>{{ lieu.adressePostale }}</p>
-            <div class="table-responsive rounded">
-            <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                <th scope="col"></th>
-                <th scope="col">Lundi</th>
-                <th scope="col">Mardi</th>
-                <th scope="col">Mercredi</th>
-                <th scope="col">Jeudi</th>
-                <th scope="col">Vendredi</th>
-                <th scope="col">Samedi</th>
-                <th scope="col">Dimanche</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <th scope="row">Matin</th>
-                <td class="border-left border-white">{{ lieu.HoraireMatinLundi }}</td>
-                <td class="border-left border-white">{{ lieu.HoraireMatinMardi }}</td>
-                <td class="border-left border-white">{{ lieu.HoraireMatinMercredi }}</td>
-                <td class="border-left border-white">{{ lieu.HoraireMatinJeudi }}</td>
-                <td class="border-left border-white">{{ lieu.HoraireMatinVendredi }}</td>
-                <td class="border-left border-white">{{ lieu.HoraireMatinSamedi }}</td>
-                <td class="border-left border-white">{{ lieu.HoraireMatinDimanche }}</td>
-                </tr>
-                <tr>
-                <th scope="row">Après-midi</th>
-                <td class="border-left border-white">{{ lieu.HoraireApremLundi }}</td>
-                <td class="border-left border-white">{{ lieu.HoraireApremMardi }}</td>
-                <td class="border-left border-white">{{ lieu.HoraireApremMercredi }}</td>
-                <td class="border-left border-white">{{ lieu.HoraireApremJeudi }}</td>
-                <td class="border-left border-white">{{ lieu.HoraireApremVendredi }}</td>
-                <td class="border-left border-white">{{ lieu.HoraireApremSamedi }}</td>
-                <td class="border-left border-white">{{ lieu.HoraireApremDimanche }}</td>
-                </tr>
-            </tbody>
-            </table>
-            </div>
+    <div>
+        <div class="row text-center" id="titre">
+            <div class="col-sm-3 ml-auto mr-auto">
+                <h1>Liste des lieux d'accueil</h1>
             </div>
         </div>
-    </div>
 
-  </div>
+        <div class="card text-center " id="carte" v-for="lieu in filteredList" v-bind:key="lieu" uk-grid>
+            <div class="card-container">
+                <div class="card-body">
+                    <h3 class="card-title">{{ lieu.nom }}</h3>
+                    <p>{{ lieu.description }}</p>
+                    <p>{{ lieu.adressePostale }}</p>
+                    <div class="table-responsive rounded">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Lundi</th>
+                                <th scope="col">Mardi</th>
+                                <th scope="col">Mercredi</th>
+                                <th scope="col">Jeudi</th>
+                                <th scope="col">Vendredi</th>
+                                <th scope="col">Samedi</th>
+                                <th scope="col">Dimanche</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <th scope="row">Matin</th>
+                                <td class="border-left border-white">{{ lieu.HoraireMatinLundi }}</td>
+                                <td class="border-left border-white">{{ lieu.HoraireMatinMardi }}</td>
+                                <td class="border-left border-white">{{ lieu.HoraireMatinMercredi }}</td>
+                                <td class="border-left border-white">{{ lieu.HoraireMatinJeudi }}</td>
+                                <td class="border-left border-white">{{ lieu.HoraireMatinVendredi }}</td>
+                                <td class="border-left border-white">{{ lieu.HoraireMatinSamedi }}</td>
+                                <td class="border-left border-white">{{ lieu.HoraireMatinDimanche }}</td>
+                                </tr>
+                                <tr>
+                                <th scope="row">Après-midi</th>
+                                <td class="border-left border-white">{{ lieu.HoraireApremLundi }}</td>
+                                <td class="border-left border-white">{{ lieu.HoraireApremMardi }}</td>
+                                <td class="border-left border-white">{{ lieu.HoraireApremMercredi }}</td>
+                                <td class="border-left border-white">{{ lieu.HoraireApremJeudi }}</td>
+                                <td class="border-left border-white">{{ lieu.HoraireApremVendredi }}</td>
+                                <td class="border-left border-white">{{ lieu.HoraireApremSamedi }}</td>
+                                <td class="border-left border-white">{{ lieu.HoraireApremDimanche }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </template>
 
@@ -100,6 +98,9 @@ export default {
     }
     td, th{
         text-align:center;
+    }
+    #titre{
+        margin-top:4%;
     }
 </style>
 
