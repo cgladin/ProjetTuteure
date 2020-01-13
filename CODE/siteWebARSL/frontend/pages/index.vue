@@ -36,8 +36,7 @@
   </header>
 
   <div class="row d-flex justify-content-center mb-3" id="carte">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d68101.40696834163!2d1.2760437400135942!3d45.833428906473266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1575379528277!5m2!1sfr!2sfr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-  </div>
+<iframe src="https://www.google.com/maps/d/embed?mid=13QJZSsCv_kAqH-8Pv9OKvU6Cn28S8FRg" width="640" height="480"></iframe> </div>
   <div class="row">
     <div class="col-md-8 mb-5">
       <h2>A propos de l'ARSL</h2>
