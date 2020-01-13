@@ -11,15 +11,15 @@
     "comment": ""
   },
   "attributes": {
-    "lieus": {
-      "collection": "lieu",
-      "via": "prestation"
-    },
     "nom": {
       "type": "string"
     },
     "description": {
       "type": "richtext"
+    },
+    "lieus": {
+      "collection": "lieu",
+      "via": "prestation"
     }
   }
 }
