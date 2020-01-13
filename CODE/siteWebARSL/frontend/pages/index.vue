@@ -199,7 +199,7 @@ export default {
 
 .title h1,h2{
   font-family: OfficinaSansStd-Book, sans-serif;
-  color: ;
+  color: #f26340 ;
 }
 #appel{
   display: flex;
