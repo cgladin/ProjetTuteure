@@ -1,0 +1,22 @@
+query Lieus {
+  lieus {
+    id
+    nom
+    description
+    adressePostale
+    HoraireMatinLundi
+    HoraireMatinMardi
+    HoraireMatinMercredi
+    HoraireMatinJeudi
+    HoraireMatinVendredi
+    HoraireMatinSamedi
+    HoraireMatinDimanche
+    HoraireApremLundi
+    HoraireApremMardi
+    HoraireApremMercredi
+    HoraireApremJeudi
+    HoraireApremVendredi
+    HoraireApremSamedi
+    HoraireApremDimanche
+  }
+}
