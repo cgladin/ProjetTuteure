@@ -3,6 +3,8 @@
   <client-only>
     <nav class="uk-navbar-container" uk-navbar>
 
+
+
         <div class="uk-navbar-left">
 
             </ul>
@@ -15,15 +17,15 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                      <li> <div id="google_translate_element"></div>
 
-            <script type="text/javascript">
-            function googleTranslateElementInit() {
-              new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-            }
-            </script>
+                      <div id="google_translate_element"></div>
+                      <script type="text/javascript">// <![CDATA[
+                      function googleTranslateElementInit() {
+                      new google.translate.TranslateElement({pageLanguage: 'fr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                      }
+                      // ]]></script>
+                      <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
 
-            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> </li>
                     <li class="nav-item">
                       <li><router-link tag="a" class="nav-link" to="/associations" exact>Associations</router-link></li>
                     </li>
