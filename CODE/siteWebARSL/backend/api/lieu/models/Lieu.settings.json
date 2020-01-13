@@ -27,9 +27,6 @@
       "model": "prestation",
       "via": "lieus"
     },
-    "SurRendezVous": {
-      "type": "boolean"
-    },
     "HoraireMatinLundi": {
       "type": "string"
     },
@@ -71,7 +68,10 @@
     },
     "HoraireApremDimanche": {
       "type": "string"
+    },
+    "animaux": {
+      "type": "string",
+      "default": "oui (à l'extérieur)"
     }
-
   }
 }
