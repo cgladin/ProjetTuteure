@@ -5,38 +5,31 @@
   <header>
     <div>
     <b-carousel
-      id="carousel-1"
+      id="carrousel"
       v-model="slide"
       :interval="4000"
       controls
       indicators
       background="#000000"
-      
       style="text-shadow: 1px 1px 2px #333;"
       @sliding-start="onSlideStart"
       @sliding-end="onSlideEnd"
     >
-      <!-- Text slides with image -->
-      <b-carousel-slide
-        caption="First slide"
-        text="Appelez le 115"
-        img-src="1.jpg"
-      ></b-carousel-slide>
-
-      <!-- Slides with custom text -->
-      <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=54">
-        <h1>Hello world!</h1>
+      <b-carousel-slide img-src="1.jpg" class="text-white">
+        <h2 class="text-white">Vous rencontrez des difficultés sociales ? (perte de logement, violences conjugales, expulsions...)</h2>
+        <div>
+          <h3 class="ml-md-auto text-white"> Appelez le </h3>
+          <img class="ml-auto" src="/115.png">
+        </div>
       </b-carousel-slide>
 
-      <!-- Slides with img slot -->
-      <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
       <b-carousel-slide>
         <template v-slot:img>
           <img
             class="d-block img-fluid w-100"
             width="1024"
             height="200"
-            src="3.jpg"
+            src="2.jpg"
             alt="image slot"
           >
         </template>
