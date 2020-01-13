@@ -43,6 +43,10 @@
     },
     "telephone": {
       "type": "integer"
+    },
+    "id": {
+      "model": "lieu",
+      "via": "assocation"
     }
   }
 }
