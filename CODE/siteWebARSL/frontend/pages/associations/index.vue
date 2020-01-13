@@ -1,14 +1,9 @@
 <template>
   <div>
 
-      <form class="uk-search uk-search-large uk-align-center uk-margin">
-          <span uk-search-icon></span>
-          <input class="uk-search-input" v-model="query" type="search" placeholder="Rechercher...">
-      </form>
-
       <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@m uk-margin" v-for="association in filteredList" v-bind:key="association" uk-grid>
           <div class="uk-card-media-left uk-cover-container">
-              <img :src="'http://localhost:1337/' + association.image.url" alt="" uk-cover>
+              <img :src="'http://localhost:1337/' + association.image.url" class="w-25 h-75" alt="" uk-cover>
               <canvas width="600" height="400"></canvas>
           </div>
           <div>
@@ -38,7 +33,7 @@ export default {
     }
   },
   apollo: {
-    association: {
+    associations: {
       prefetch: true,
       query: associationsQuery
     }
@@ -46,34 +41,10 @@ export default {
   computed: {
     // Search system
     filteredList() {
-      return this.associations.filter(restaurant => {
+      return this.associations.filter(association => {
         return association.nom.toLowerCase().includes(this.query.toLowerCase())
       })
     },
-  }
-}
-</script>
-  </client-only>
-</div>
-</template>
-
-<script>
-import associationQuery from '~/apollo/queries/association/associations'
-
-export default {
-  data() {
-    return {
-      association: Object
-    }
-  },
-  apollo: {
-    association: {
-      prefetch: true,
-      query: associationQuery,
-      variables () {
-        return { id: this.$route.params.id }
-      }
-    }
   }
 }
 </script>
