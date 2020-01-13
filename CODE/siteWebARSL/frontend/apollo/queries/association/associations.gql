@@ -2,6 +2,7 @@ query Associations {
   associations {
     id
     nom
+    description
     image{
       url
     }
