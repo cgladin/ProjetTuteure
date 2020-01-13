@@ -13,7 +13,7 @@
           </div>
           <div>
               <div class="uk-card-body">
-                  <h3 class="uk-card-title">{{ association.name }}</h3>
+                  <h3 class="uk-card-title">{{ association.nom }}</h3>
                   <p>{{ association.description }}</p>
                   <router-link :to="{ name: 'associations-id', params: { id: association.id }}" tag="a" class="uk-button uk-button-primary">Voir l'association
                   </router-link>
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-// Import the restaurants query
+// Import the associations query
 import associationsQuery from '~/apollo/queries/association/associations'
 
 export default {
@@ -47,7 +47,7 @@ export default {
     // Search system
     filteredList() {
       return this.associations.filter(restaurant => {
-        return association.name.toLowerCase().includes(this.query.toLowerCase())
+        return association.nom.toLowerCase().includes(this.query.toLowerCase())
       })
     },
   }

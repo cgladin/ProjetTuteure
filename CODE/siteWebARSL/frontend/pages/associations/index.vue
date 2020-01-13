@@ -53,27 +53,3 @@ export default {
   }
 }
 </script>
-  </client-only>
-</div>
-</template>
-
-<script>
-import associationQuery from '~/apollo/queries/association/associations'
-
-export default {
-  data() {
-    return {
-      association: Object
-    }
-  },
-  apollo: {
-    association: {
-      prefetch: true,
-      query: associationQuery,
-      variables () {
-        return { id: this.$route.params.id }
-      }
-    }
-  }
-}
-</script>
