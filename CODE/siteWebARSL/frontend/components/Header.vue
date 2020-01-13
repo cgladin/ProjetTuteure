@@ -10,7 +10,7 @@
             </ul>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
               <div class="container">
-                  <b-img src="logo.png" height="40" width="55" fluid alt="Responsive logo"></b-img>
+                  <a href="/"><b-img src="logo.png" height="40" width="55" fluid alt="Responsive logo"></b-img></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>

@@ -24,12 +24,13 @@
           <img class="ml-auto" id="centquinze" src="/115.png">
         </div>
       </b-carousel-slide>
-
+      <a href="/associations">
       <b-carousel-slide img-src="3.jpg"
       class="text-white img-fluid responsive">
         <h2 class="text-white ordi">Cliquer pour des informations sur les associations</h2>
-        <h3 class="text-white tel">CLiquer pour des informations sur les associations</h3>
+        <h3 class="text-white tel">Cliquer pour des informations sur les associations</h3>
       </b-carousel-slide>
+    </a>
     </b-carousel>
   </div>
   </header>
