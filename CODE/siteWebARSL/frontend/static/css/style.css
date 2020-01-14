@@ -18,6 +18,9 @@
 .tel {
   display: none;
 }
+.ordi{
+  display: run-in;
+}
 .translate {
   margin-right: 50px;
   margin-top: 7px;
