@@ -9,7 +9,6 @@
         <div class="card text-center" id="carte" v-for="lieu in filteredList" v-bind:key="lieu" uk-grid>
                 <div class="card-body">
                     <h3 class="card-title">{{ lieu.nom }}</h3>
-                    <p>Responsable :    {{ lieu.association.nom }}
                     <p>{{ lieu.description }}</p>
                     <p>{{ lieu.adressePostale }}</p>
                     <p>Animaux autorisés :   {{ lieu.animaux }}</p>
@@ -24,7 +23,7 @@
                                 <th scope="col">Jeudi</th>
                                 <th scope="col">Vendredi</th>
                                 <th scope="col">Samedi</th>
-                                <th scope="col">Dimanche</th>  
+                                <th scope="col">Dimanche</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -52,7 +51,7 @@
                         </table>
                     </div>
                 </div>
-            
+
         </div>
     </div>
 
@@ -129,7 +128,7 @@ export default {
 <!--
 <template>
     <div>
-    
+
         <div id="title">
             <h1 id="titre"> Ajouter un lieu d'accueil </h1>
         </div>
@@ -149,7 +148,7 @@ export default {
                                     <option>aled</option>
                                     <option>.....</option>
                                 </select>
-                            </div> 
+                            </div>
                         <p class="help-block">Selectionner l'association qui est responsable du lieu d'accueil</p>
                         </div>
                     </div>
@@ -166,24 +165,24 @@ export default {
                             <input type="time" name="time" class="timehour">
                             <p class="help-block">A quelle heure le lieu ouvre au publique</p>
                         </div>
-                    </div> 
+                    </div>
                     <div class="control-group">
                         <label class="control-label" for="input01">Heure de fermeture :</label>
                         <div class="controls">
                             <input type="time" name="time" class="timehour">
                             <p class="help-block">A quelle heure le lieu ferme au publique</p>
                         </div>
-                    </div>   
+                    </div>
                     <div class="control-group">
                         <label class="control-label" for="input01">Adresse postale :</label>
                         <div class="controls">
                             <textarea class="form-control" rows="2" id="comment" style="width:auto;"></textarea>
                             <p class="help-block">ex : 27 rue du général de Gaulle, 87000 Limoges France</p>
                         </div>
-                    </div>           
+                    </div>
                 </fieldset>
                 </div>
-                
+
             </form>
         </div>
     </div>
