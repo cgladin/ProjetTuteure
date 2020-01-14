@@ -3,7 +3,7 @@
 
       <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@m uk-margin" v-for="association in filteredList" v-bind:key="association" uk-grid>
           <div class="uk-card-media-left uk-cover-container">
-              <img :src="'http://localhost:1337/' + association.image.url" class="w-25 h-75" alt="" uk-cover>
+              <img :src="'http://localhost:1337/' + association.image.url" class="w-50 h-75" alt="" uk-cover>
               <canvas width="600" height="400"></canvas>
           </div>
           <div>

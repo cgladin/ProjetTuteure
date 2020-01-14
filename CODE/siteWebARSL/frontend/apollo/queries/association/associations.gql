@@ -3,6 +3,8 @@ query Associations {
     id
     nom
     description
+    adressePostale
+    telephone
     image{
       url
     }
