@@ -118,47 +118,21 @@
   </div>
   <!-- /.row -->
 
-  <div class="row">
-    <div class="col-md-4 mb-5">
-      <div class="card h-100">
-        <img class="card-img-top" src="http://placehold.it/300x200" alt="">
-        <div class="card-body">
-          <h4 class="card-title">Restos du Coeur</h4>
-          <p class="card-text"> 23, Rue Charpentier 87 000 LIMOGES </p>
-          <p class="card-text"> 9H-12H  14H-17H </p>
-        </div>
-        <div class="card-footer">
-          <a href="#" class="btn btn-primary">Find Out More!</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-5">
-      <div class="card h-100">
-        <img class="card-img-top" src="http://placehold.it/300x200" alt="">
-        <div class="card-body">
-          <h4 class="card-title">Secours Populaire</h4>
-          <p class="card-text"> 6, Rue Fulton 87 280 LIMOGES </p>
-          <p class="card-text"> 14H-18H </p>
-        </div>
-        <div class="card-footer">
-          <a href="#" class="btn btn-primary">Find Out More!</a>
+  <b-row>
+      <div class="uk-card uk-card-default uk-grid-collapse w-25 m-1 mw-100 col col-lg-2 d-flex align-items-stretch align-content-stretch flex-wrap" v-for="association in filteredList" v-bind:key="association" uk-grid>
+        <div class="card ">
+          <img class="card-img-top card-sm" :src="'http://localhost:1337/' + association.image.url" alt="">
+          <div class="card-body">
+            <h4 class="card-title">{{ association.nom }}</h4>
+            <p class="card-text"> {{ association.adressePostale }} </p>
+            <p class="card-text"> 0{{ association.telephone }} </p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary">VOIR L'ASSOCIATION</a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-4 mb-5">
-      <div class="card h-100">
-        <img class="card-img-top" src="http://placehold.it/300x200" alt="">
-        <div class="card-body">
-          <h4 class="card-title">Secours Catholique</h4>
-          <p class="card-text"> 23, Rue Charpentier 87 000 LIMOGES </p>
-          <p class="card-text"> 9H-12H  14H-17H </p>
-        </div>
-        <div class="card-footer">
-          <a href="#" class="btn btn-primary">Find Out More!</a>
-        </div>
-      </div>
-    </div>
-  </div>
+  </b-row>
   <div class="body">
     <!-- Footer -->
 <footer class="page-footer font-small teal pt-4">
@@ -212,12 +186,17 @@
 </template>
 
 <script>
+
+import associationsQuery from '~/apollo/queries/association/associations'
+
 export default {
 
   data() {
     return {
       slide: 0,
-      sliding: null
+      sliding: null,
+      associations: [],
+      query: ''
     }
   },
   methods: {
@@ -227,6 +206,20 @@ export default {
     onSlideEnd(slide) {
       this.sliding = false
     }
+  },
+  apollo: {
+    associations: {
+      prefetch: true,
+      query: associationsQuery
+    }
+  },
+  computed: {
+    // Search system
+    filteredList() {
+      return this.associations.filter(association => {
+        return association.nom.toLowerCase().includes(this.query.toLowerCase())
+      })
+    },
   }
 }
 
