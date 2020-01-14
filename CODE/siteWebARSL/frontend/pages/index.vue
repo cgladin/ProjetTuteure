@@ -141,55 +141,32 @@
         </div>
       </div>
   </b-row>
-  <div class="body">
-    <!-- Footer -->
-<footer class="page-footer font-small teal pt-4">
 
-  <!-- Footer Text -->
+
+<footer id="foot" class="page-footer font-small blue pt-4">
   <div class="container-fluid text-center text-md-left">
-
-    <!-- Grid row -->
     <div class="row">
-
-      <!-- Grid column -->
       <div class="col-md-4 mt-md-0 mt-3">
-
-        <!-- Content -->
-        <h5 class="text-uppercase font-weight-bold text-md-center">Nous contacter : <img src="115.png" alt="115" width="75" height="75"></h5>
-
+        <h5 id="text1" class="text-uppercase font-weight-bold text-md-center">Nous contacter : 05.55.77.57.77</h5>
       </div>
-      <!-- Grid column -->
-
       <hr class="clearfix w-100 d-md-none pb-3">
-
       <div class="col-md-4 mt-md-0 mt-3">
-
-        <!-- Content -->
-        <h5 class="text-uppercase font-weight-bold text-md-center">ARSL
+        <h5 id="text2" class="text-uppercase font-weight-bold text-md-center">ARSL
 11, RUE DE DION BOUTON
 87280 LIMOGES
-05.55.77.57.77</h5>
-
+</h5>
       </div>
-      <!-- Grid column -->
-
       <hr class="clearfix w-100 d-md-none pb-3">
-
-      <!-- Grid column -->
       <div class="col-md-4 mb-md-0 mb-3">
-
-        <!-- Content -->
-        <h5 class="text-uppercase font-weight-bold text-md-center"><a href="http://www.arsl.eu/mentions-legales/">Mentions legales</a></h5>
-
+        <h5 class="text-uppercase font-weight-bold text-md-center"><a id="link2" href="http://www.arsl.eu/mentions-legales/">Mentions legales</a></h5>
       </div>
     </div>
   </div>
   <div class="footer-copyright text-center py-3">
-    <a href="http://www.arsl.eu/"> Site ARSL</a>
+    <a id="link1" href="http://www.arsl.eu/"> Site ARSL</a>
   </div>
 </footer>
 
-  </div>
 </div>
 </template>
 
@@ -245,6 +222,10 @@ export default {
   align-items: center;
   text-align: center;
 }
+#link1,#link2,#text1,#text2
+{
+  color : #ffffff;
+}
 
 .title h1,h2{
   font-family: OfficinaSansStd-Book, sans-serif;
@@ -281,6 +262,12 @@ margin-top: 5px;
 #map_canvas{
   width:500px;
   height:400px;
+}
+
+#foot{
+  background-color: #343a40;
+  margin-left: -40px;
+  margin-right: -40px;
 }
 
 </style>
