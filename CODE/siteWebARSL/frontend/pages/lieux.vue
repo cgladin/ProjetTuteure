@@ -6,14 +6,15 @@
             </div>
         </div>
 
-        <div class="card text-center " id="carte" v-for="lieu in filteredList" v-bind:key="lieu" uk-grid>
-            <div class="card-container">
+        <div class="card text-center" id="carte" v-for="lieu in filteredList" v-bind:key="lieu" uk-grid>
                 <div class="card-body">
                     <h3 class="card-title">{{ lieu.nom }}</h3>
+                    <p>Responsable :    {{ lieu.association.nom }}
                     <p>{{ lieu.description }}</p>
                     <p>{{ lieu.adressePostale }}</p>
-                    <div class="table-responsive rounded">
-                        <table class="table">
+                    <p>Animaux autorisés :   {{ lieu.animaux }}</p>
+                    <section class="col-sm-8 table-responsive rounded">
+                        <table class="table table-condensed">
                             <thead class="thead-dark">
                                 <tr>
                                 <th scope="col"></th>
@@ -23,7 +24,7 @@
                                 <th scope="col">Jeudi</th>
                                 <th scope="col">Vendredi</th>
                                 <th scope="col">Samedi</th>
-                                <th scope="col">Dimanche</th>
+                                <th scope="col">Dimanche</th>  
                                 </tr>
                             </thead>
                             <tbody>
@@ -49,9 +50,9 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
+                    </section>
                 </div>
-            </div>
+            
         </div>
     </div>
 
@@ -103,13 +104,6 @@ export default {
         margin-top:4%;
     }
 </style>
-
-
-
-
-
-
-
 
 
 
