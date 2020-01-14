@@ -1,43 +1,51 @@
 
 <template>
   <client-only>
-    <nav class="uk-navbar-container" uk-navbar>
+               <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                 <div class="container">
+                   <a href="/"><b-img src="logo.png" height="40" width="55" fluid alt="Responsive logo"></b-img></a>
+
+                   <!-- burger sur telephone -->
+                   <div class="row">
+
+                       <b-button v-b-toggle.collapse-1 variant="primary" class="tel bg-dark">
+                         <span class="navbar-toggler-icon"></span>
+                       </b-button>
 
 
+                       <b-collapse id="collapse-1" class="mt-2">
+                         <b-card class="bg-dark">
+                           <div class="translate" id="google_translate_element"></div>
+                           <b-button><router-link tag="a" class="nav-link text-white" to="/associations" exact>Associations</router-link></b-button>
+                           <b-button><router-link tag="a" class="nav-link text-white" to="/associations" exact>Se connecter</router-link></b-button>
+                         </b-card>
+                       </b-collapse>
 
-        <div class="uk-navbar-left">
+                 </div>
 
-            </ul>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-              <div class="container">
-                  <a href="/"><b-img src="logo.png" height="40" width="55" fluid alt="Responsive logo"></b-img></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                  <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
 
-                      <div class="translate" id="google_translate_element"></div>
-                      <script type="text/javascript">// <![CDATA[
-                      function googleTranslateElementInit() {
-                      new google.translate.TranslateElement({pageLanguage: 'fr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-                      }
-                      // ]]></script>
-                      <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
+                    <!-- bouton sur ecran pc -->
+                     <ul class="navbar-nav ml-auto ordi">
+                       <li class="nav-item">
+                         <div class="translate" id="google_translate_element"></div>
+                       </li>
+                       <li class="nav-item">
+                         <router-link tag="a" class="nav-link" to="/associations" exact>Associations</router-link>
+                       </li>
+                       <li class="nav-item">
+                         <router-link tag="a" class="nav-link" to="/associations" exact>Se connecter</router-link>
+                       </li>
+                     </ul>
+                 </div>
 
-                    <li class="nav-item">
-                      <li><router-link tag="a" class="nav-link" to="/associations" exact>Associations</router-link></li>
-                    </li>
-                    <li class="nav-item">
-                      <li><router-link tag="a" class="nav-link" to="/associations" exact>Se connecter</router-link></li>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </nav>
-        </div>
+                 <!-- javascript du translate -->
+                 <script type="text/javascript">// <![CDATA[
+                 function googleTranslateElementInit() {
+                 new google.translate.TranslateElement({pageLanguage: 'fr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                 }
+                 // ]]></script>
+                 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
+               </nav>
 
-    </nav>
   </client-only>
 </template>
