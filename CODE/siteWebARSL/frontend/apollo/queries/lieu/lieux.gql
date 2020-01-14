@@ -18,5 +18,9 @@ query Lieus {
     HoraireApremVendredi
     HoraireApremSamedi
     HoraireApremDimanche
+    animaux
+    association{
+      nom
+    }
   }
 }

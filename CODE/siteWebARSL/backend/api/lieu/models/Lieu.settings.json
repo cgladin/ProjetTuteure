@@ -72,6 +72,10 @@
     "animaux": {
       "type": "string",
       "default": "oui (à l'extérieur)"
+    },
+    "association": {
+      "model": "association",
+      "via": "lieus"
     }
   }
 }
