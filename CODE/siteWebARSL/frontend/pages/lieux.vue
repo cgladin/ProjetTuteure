@@ -13,7 +13,7 @@
                     <p>{{ lieu.description }}</p>
                     <p>{{ lieu.adressePostale }}</p>
                     <p>Animaux autorisés :   {{ lieu.animaux }}</p>
-                    <section class="col-sm-8 table-responsive rounded">
+                    <div class="table-responsive rounded">
                         <table class="table table-condensed">
                             <thead class="thead-dark">
                                 <tr>
@@ -50,7 +50,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </section>
+                    </div>
                 </div>
             
         </div>
