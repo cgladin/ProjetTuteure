@@ -3,6 +3,8 @@ query Association($id: ID!) {
     id
     nom
     description
+    adressePostale
+    telephone
     image{
       url
     }
