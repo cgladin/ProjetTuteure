@@ -84,6 +84,10 @@
       </div>
     </div>
 
+    <div>
+      <b-button class="btn-lg" variant="primary" href="/lieux">Voir les horaires des lieux</b-button>
+    </div>
+
   <div class="row">
     <div class="col-md-8 mb-5">
       <h2>A propos de l'ARSL</h2>
