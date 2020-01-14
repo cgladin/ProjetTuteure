@@ -20,15 +20,15 @@
         <h2 class="text-white ordi">Vous rencontrez des difficultés sociales ? (perte de logement, violences conjugales, expulsions...)</h2>
         <h3 class="text-white tel">Vous rencontrez des difficultés sociales ? Appelez le </h3>
         <div>
-          <h3 class="ml-md-auto text-white ordi"> Appelez le </h3>
+          <h2 class="ml-md-auto text-white ordi"> Appelez le </h2>
           <img class="ml-auto" id="centquinze" src="/115.png">
         </div>
       </b-carousel-slide>
       <a href="/associations">
       <b-carousel-slide img-src="3.jpg"
       class="text-white img-fluid responsive">
-        <h2 class="text-white ordi">Cliquer pour des informations sur les associations</h2>
-        <h3 class="text-white tel">Cliquer pour des informations sur les associations</h3>
+        <h2 id="infoAssoOrdi" class="text-white ordi">Cliquez pour retrouver les informations sur les associations et les lieux d'accueil de jour de Limoges</h2>
+        <h3 id="infoAssoTel" class="text-white tel">Cliquez pour des informations sur les associations</h3>
       </b-carousel-slide>
     </a>
     </b-carousel>

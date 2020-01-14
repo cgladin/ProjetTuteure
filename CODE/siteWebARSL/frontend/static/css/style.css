@@ -1,3 +1,9 @@
+#carrousel{
+  margin-left: -10%;
+  margin-right: -10%;
+  margin-top: -3%;
+  margin-bottom: 2%;
+}
 #boutonAssociation{
   margin-bottom: 55%;
 }
@@ -6,7 +12,7 @@
 }
 .responsive {
   width: 100%;
-  max-height: 400px;
+  max-height: 600px;
   height: auto;
 }
 .tel {
@@ -15,6 +21,12 @@
 .translate {
   margin-right: 50px;
   margin-top: 7px;
+}
+#centquinze{
+  margin-bottom: 5%;
+}
+#infoAssoOrdi{
+  margin-bottom: 15%;
 }
 @media (max-width: 991.98px) {
   .tel{
@@ -37,7 +49,7 @@
     font-family: candara;
   }
   #centquinze{
-    margin-bottom: 0%;
+    margin-bottom: 10%;
     width: 30%;
     height: 30%;
   }
