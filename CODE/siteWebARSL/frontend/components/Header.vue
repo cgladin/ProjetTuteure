@@ -27,10 +27,10 @@
                          <div class="translate" id="google_translate_element"></div>
                        </li>
                        <li class="nav-item align-middle">
-                         <router-link tag="a" class="nav-link " to="/associations" exact>Associations</router-link>
+                         <router-link tag="a" class="nav-link text-white" to="/associations" exact>Associations</router-link>
                        </li>
                        <li class="nav-item align-middle">
-                         <router-link tag="a" class="nav-link " to="/associations" exact>Se connecter</router-link>
+                         <router-link tag="a" class="nav-link text-white" to="/associations" exact>Se connecter</router-link>
                        </li>
                      </ul>
                  </div>
