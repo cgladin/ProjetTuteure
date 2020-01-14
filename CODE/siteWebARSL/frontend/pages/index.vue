@@ -6,27 +6,27 @@
           zoom: 19,
           center: new google.maps.LatLng(48.858565, 2.347198),
           mapTypeId: google.maps.MapTypeId.ROADMAP
-        });		
+        });
   }
-    
+
   if (navigator.geolocation)
     var watchId = navigator.geolocation.watchPosition(successCallback, null, {enableHighAccuracy:true});
   else
     alert("Votre navigateur ne prend pas en compte la géolocalisation HTML5");
-    
+
   function successCallback(position){
     map.panTo(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
     var marker = new google.maps.Marker({
-      position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude), 
+      position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
       map: map
-    });  
+    });
     if (previousPosition){
       var newLineCoordinates = [
           new google.maps.LatLng(previousPosition.coords.latitude, previousPosition.coords.longitude),
           new google.maps.LatLng(position.coords.latitude, position.coords.longitude)];
-      
+
       var newLine = new google.maps.Polyline({
-        path: newLineCoordinates,	       
+        path: newLineCoordinates,
         strokeColor: "#FF0000",
         strokeOpacity: 1.0,
         strokeWeight: 2
@@ -34,7 +34,7 @@
       newLine.setMap(map);
     }
     previousPosition = position;
-  };	
+  };
 </script>
 
 <template>
@@ -77,11 +77,15 @@
   </div>
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
   </header>
-  
+
     <div onload="initialize()" class="row d-flex justify-content-center mb-1" id="carte">
       <div id="map_canvas" class=".flex-fill">
-        <iframe src="https://www.google.com/maps/d/embed?mid=13QJZSsCv_kAqH-8Pv9OKvU6Cn28S8FRg" width="800" height="480"></iframe> 
+        <iframe src="https://www.google.com/maps/d/embed?mid=13QJZSsCv_kAqH-8Pv9OKvU6Cn28S8FRg" width="800" height="480"></iframe>
       </div>
+    </div>
+
+    <div>
+      <b-button class="btn-lg" variant="primary" href="/lieux">Voir les horaires des lieux</b-button>
     </div>
 
   <div class="row">
@@ -115,6 +119,10 @@
         <a href="mailto:#"> arsl.sapmpm@wanadoo.fr</a>
       </address>
     </div>
+  </div>
+  <div class="row">
+    <h2>Les associations</h2>
+    <hr>
   </div>
   <!-- /.row -->
 
