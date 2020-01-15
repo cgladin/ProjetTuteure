@@ -1,48 +1,37 @@
 <template>
-    <div>
-      <link rel="stylesheet" href="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.css" />
-      <script src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
-    </div>
+  <div>
+    <b-button variant="danger" @click="logPosition" >Log position</b-button>
+    <no-ssr>
+      <l-map class="mini-map" :zoom=13 :center="position">
+        <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
+        <l-marker :lat-lng="position" :draggable="draggable">
+          <l-popup :content="popupContent"></l-popup>
+        </l-marker>
+      </l-map>
+    </no-ssr>
+  </div>
 </template>
 
 <script>
-      var map;
+export default {
+  data: () => ({
+    position: [55.607741796855734, 13.018133640289308],
+    draggable: true,
+    popupContent: "Sentian HQ"
+  }),
+  methods: {
+    logPosition() {
+      console.log(this.position);
+    }
+  }
+};
+</script>
 
-      function init() {
-         map = new L.Map('map');
-         L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
-            maxZoom: 18
-         }).addTo(map);
-         map.attributionControl.setPrefix(''); // Don't show the 'Powered by Leaflet' text.
-
-         // map view before we get the location
-         map.setView(new L.LatLng(51.505, -0.09), 13);
-      }
-
-      function onLocationFound(e) {
-         var radius = e.accuracy / 2;
-         var location = e.latlng
-         L.marker(location).addTo(map)
-         L.circle(location, radius).addTo(map);
-      }
-
-      function onLocationError(e) {
-         alert(e.message);
-      }
-
-      function getLocationLeaflet() {
-         map.on('locationfound', onLocationFound);
-         map.on('locationerror', onLocationError);
-
-         map.locate({setView: true, maxZoom: 16});
-      }
-   </script>
-
-   <template>
-   <div onLoad="javascript:init();">
-      <div id="map" style="height: 200px"></div>
-      <input type="button" value="Locate me!" onClick="javascript:getLocationLeaflet();">
-   </div>
-   
-</template>
+<style src="leaflet/dist/leaflet.css">
+</style>
+<style >
+.mini-map {
+  width: 100%;
+  height: 600px !important;
+}
+</style>

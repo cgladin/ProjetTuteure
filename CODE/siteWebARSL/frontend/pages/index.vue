@@ -40,7 +40,10 @@
       <no-ssr>
         <l-map :zoom=14 :center="[45.830405, 1.260010]">
           <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
-          <l-marker :lat-lng="[45.837633, 1.278589]"></l-marker>
+          <l-marker :lat-lng="[45.843483, 1.263674]">
+            <l-popup>Resto du coeur</l-popup>
+          </l-marker>
+          <!--<l-marker :lat-lng="[45.843492,, 1.263609]"></l-marker>-->
         </l-map>
       </no-ssr>
     </div>
