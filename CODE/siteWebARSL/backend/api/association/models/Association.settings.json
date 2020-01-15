@@ -47,6 +47,9 @@
     "lieus": {
       "collection": "lieu",
       "via": "association"
+    },
+    "siteWeb": {
+      "type": "string"
     }
   }
 }
