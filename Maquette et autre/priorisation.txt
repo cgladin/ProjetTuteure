@@ -1,0 +1,25 @@
+raccourcis sous forme de questions simples
+secours populaire : ligne de bus, horaires ouverture, num tel, num tel standard, adresse
+pas de question de santé
+nationalité : 	eu, hors eu, français
+santé : ++ -> -- OU informations partielles : est malade/mal au dos
+problème de santé : oui/non
+réduire taille formulaire
+Fiche succinte, réduire taille, un seul onglet
+Pictogramme
+Alerte de l'état -> pop up Messagerie interne, personne a personne + groupe
+Geolocalisation des maraudes ?
+Point de reunions des maraudes
+Système de mails
+
+1. Partie publique
+	- services
+	- parcours de maraudes
+	- pictogrammes
+2. Messagerie instantanée ? 
+	- entre deux personnes
+	- de groupe
+3. Fichage des personnes (pendant la maraude)
+4. Rapports de maraudes (synthèse des fiches à la fin de la maraude) = ensemble de fiche + synthèse
+5. Statistiques (chiffres, anonymat)
+6. Alertes (etat + signalements de personnes en etat critique)
