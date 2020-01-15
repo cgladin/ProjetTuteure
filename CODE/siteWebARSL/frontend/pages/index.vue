@@ -1,50 +1,8 @@
-<script>
-  var previousPosition = null;
-
-  function initialize() {
-    map = new google.maps.Map(document.getElementById("map_canvas"), {
-          zoom: 19,
-          center: new google.maps.LatLng(48.858565, 2.347198),
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        });
-  }
-
-  if (navigator.geolocation)
-    var watchId = navigator.geolocation.watchPosition(successCallback, null, {enableHighAccuracy:true});
-  else
-    alert("Votre navigateur ne prend pas en compte la géolocalisation HTML5");
-
-  function successCallback(position){
-    map.panTo(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
-    var marker = new google.maps.Marker({
-      position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-      map: map
-    });
-    if (previousPosition){
-      var newLineCoordinates = [
-          new google.maps.LatLng(previousPosition.coords.latitude, previousPosition.coords.longitude),
-          new google.maps.LatLng(position.coords.latitude, position.coords.longitude)];
-
-      var newLine = new google.maps.Polyline({
-        path: newLineCoordinates,
-        strokeColor: "#FF0000",
-        strokeOpacity: 1.0,
-        strokeWeight: 2
-      });
-      newLine.setMap(map);
-    }
-    previousPosition = position;
-  };
-</script>
-
 <template>
-
-
-
 <div>
 
   <header>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    
     <div>
     <b-carousel
       id="carrousel"
@@ -75,14 +33,24 @@
     </a>
     </b-carousel>
   </div>
-  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+  
   </header>
 
-    <div onload="initialize()" class="row d-flex justify-content-center mb-1" id="carte">
-      <div id="map_canvas" class=".flex-fill">
-        <iframe src="https://www.google.com/maps/d/embed?mid=13QJZSsCv_kAqH-8Pv9OKvU6Cn28S8FRg" width="800" height="480"></iframe>
-      </div>
+    <div id="map-wrap" style="height: 50vh">
+      <no-ssr>
+        <l-map :zoom=14 :center="[45.830405, 1.260010]">
+          <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
+          <l-marker :lat-lng="[45.837633, 1.278589]"></l-marker>
+        </l-map>
+      </no-ssr>
     </div>
+    <br><br>
+
+
+   <!-- <div class="row d-flex justify-content-center mb-3">
+        <iframe src="https://www.google.com/maps/d/embed?mid=13QJZSsCv_kAqH-8Pv9OKvU6Cn28S8FRg" width="640" height="480"></iframe>
+    </div>
+    -->
 
     <div>
       <b-button class="btn-lg" variant="primary" href="/lieux">Voir les horaires des lieux</b-button>
@@ -207,8 +175,6 @@ export default {
     },
   }
 }
-
-
 </script>
 
 <style>
@@ -255,19 +221,15 @@ padding: 5px;
 margin-top: 5px;
 }
 
-#carte{
-  width:100%;
-}
-
-#map_canvas{
-  width:500px;
-  height:400px;
-}
-
 #foot{
   background-color: #343a40;
   margin-left: -40px;
   margin-right: -40px;
+}
+
+#map{
+  height:300px;
+  width:100%;
 }
 
 </style>
