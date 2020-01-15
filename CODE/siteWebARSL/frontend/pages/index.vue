@@ -98,9 +98,26 @@
     <br>
   </div>
 
+  <b-row>
+      <div class="uk-card uk-card-default uk-grid-collapse w-25 m-1 mw-100 col col-lg-2 d-flex align-items-stretch align-content-stretch flex-wrap" v-for="association in filteredList" v-bind:key="association" uk-grid>
+        <div class="card ">
+          <img class="card-img-top card-sm" :src="'http://localhost:1337/' + association.image.url" alt="">
+          <div class="card-body">
+            <h4 class="card-title">{{ association.nom }}</h4>
+            <p class="card-text"> {{ association.adressePostale }} </p>
+            <p class="card-text"> 0{{ association.telephone }} </p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary">VOIR L'ASSOCIATION</a>
+          </div>
+        </div>
+      </div>
+  </b-row>
+
   <!-- /.row -->
   <div class="row">
     <div class="col-md-8 mb-5">
+      <br>
       <h2>A propos de l'ARSL</h2>
       <hr>
       <p>L’Association de réinsertion sociale du Limousin est une association
@@ -114,6 +131,7 @@
       <a class="btn btn-primary btn-lg" href="http://www.arsl.eu/">En savoir plus... &raquo;</a>
     </div>
     <div class="col-md-4 mb-5">
+      <br>
       <h2>Contactez-nous</h2>
       <hr>
       <address>
@@ -131,23 +149,6 @@
       </address>
     </div>
   </div>
-
-  <b-row>
-      <div class="uk-card uk-card-default uk-grid-collapse w-25 m-1 mw-100 col col-lg-2 d-flex align-items-stretch align-content-stretch flex-wrap" v-for="association in filteredList" v-bind:key="association" uk-grid>
-        <div class="card ">
-          <img class="card-img-top card-sm" :src="'http://localhost:1337/' + association.image.url" alt="">
-          <div class="card-body">
-            <h4 class="card-title">{{ association.nom }}</h4>
-            <p class="card-text"> {{ association.adressePostale }} </p>
-            <p class="card-text"> 0{{ association.telephone }} </p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">VOIR L'ASSOCIATION</a>
-          </div>
-        </div>
-      </div>
-  </b-row>
-
 
 <footer id="foot" class="page-footer font-small blue pt-4">
   <div class="container-fluid text-center text-md-left">
