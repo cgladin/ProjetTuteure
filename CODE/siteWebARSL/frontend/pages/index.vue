@@ -88,6 +88,17 @@
       <b-button class="btn-lg" variant="primary" href="/lieux">Voir les horaires des lieux</b-button>
     </div>
 
+  <div>
+    <h2>Les associations</h2>
+    <hr>
+    <p>Afin de lutter contre les exclusions sociales, l'Association de Réinsertion Sociale du Limousin s'est associée avec des associations humanitaires.
+    Celles-ci effectuent des maraudes à l'aide de bénévoles permettant de rencontrer les personnes en difficultés sociales et donc
+    leur proposer une aide. Ces associations et l'ARSL possèdent également des lieux d'accueil proposant de nombreuses prestations sociales. Ces lieux
+    sont indiqués sur la carte ci-dessus.</p>
+    <br>
+  </div>
+
+  <!-- /.row -->
   <div class="row">
     <div class="col-md-8 mb-5">
       <h2>A propos de l'ARSL</h2>
@@ -120,14 +131,6 @@
       </address>
     </div>
   </div>
-  <div>
-    <h2>Les associations</h2>
-    <hr>
-    <p>Afin de lutter contre les exclusions sociales, l'Association de Réinsertion Sociale du Limousin s'est associée avec les associations suivantes.
-    Celles-ci effectuent des maraudes à l'aide de bénévoles permettant de rencontrer les personnes en difficultés sociales et donc
-    leur proposer une aide. Ces associations et l'ARSL possèdent également des lieux d'accueil proposant de nombreuses prestations sociales.</p>
-  </div>
-  <!-- /.row -->
 
   <b-row>
       <div class="uk-card uk-card-default uk-grid-collapse w-25 m-1 mw-100 col col-lg-2 d-flex align-items-stretch align-content-stretch flex-wrap" v-for="association in filteredList" v-bind:key="association" uk-grid>
