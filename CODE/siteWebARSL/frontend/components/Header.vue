@@ -17,7 +17,7 @@
                          <b-card class="bg-dark">
                            <div class="translate" id="google_translate_element"></div>
                            <router-link tag="a" class="nav-link text-white" to="/associations" exact>Associations</router-link>
-                           <router-link tag="a" class="nav-link text-white" to="/users" exact>Se connecter</router-link>
+                           <a class="nav-link text-white" href="http://localhost:1337/admin/auth/login">Se connecter</a>
                          </b-card>
                        </b-collapse>
                  </div>
@@ -30,7 +30,7 @@
                          <router-link tag="a" class="nav-link text-white" to="/associations" exact>Associations</router-link>
                        </li>
                        <li class="nav-item align-middle">
-                         <router-link tag="a" class="nav-link text-white" to="http://localhost:1337/admin/auth/login" exact>Se connecter</router-link>
+                         <a class="nav-link text-white" href="http://localhost:1337/admin/auth/login">Se connecter</a>
                        </li>
                      </ul>
                  </div>
