@@ -1,50 +1,8 @@
-<script>
-  var previousPosition = null;
-
-  function initialize() {
-    map = new google.maps.Map(document.getElementById("map_canvas"), {
-          zoom: 19,
-          center: new google.maps.LatLng(48.858565, 2.347198),
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        });
-  }
-
-  if (navigator.geolocation)
-    var watchId = navigator.geolocation.watchPosition(successCallback, null, {enableHighAccuracy:true});
-  else
-    alert("Votre navigateur ne prend pas en compte la géolocalisation HTML5");
-
-  function successCallback(position){
-    map.panTo(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
-    var marker = new google.maps.Marker({
-      position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-      map: map
-    });
-    if (previousPosition){
-      var newLineCoordinates = [
-          new google.maps.LatLng(previousPosition.coords.latitude, previousPosition.coords.longitude),
-          new google.maps.LatLng(position.coords.latitude, position.coords.longitude)];
-
-      var newLine = new google.maps.Polyline({
-        path: newLineCoordinates,
-        strokeColor: "#FF0000",
-        strokeOpacity: 1.0,
-        strokeWeight: 2
-      });
-      newLine.setMap(map);
-    }
-    previousPosition = position;
-  };
-</script>
-
 <template>
-
-
-
 <div>
 
   <header>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    
     <div>
     <b-carousel
       id="carrousel"
@@ -75,56 +33,41 @@
     </a>
     </b-carousel>
   </div>
-  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+  
   </header>
 
-    <div onload="initialize()" class="row d-flex justify-content-center mb-1" id="carte">
-      <div id="map_canvas" class=".flex-fill">
-        <iframe src="https://www.google.com/maps/d/embed?mid=13QJZSsCv_kAqH-8Pv9OKvU6Cn28S8FRg" width="800" height="480"></iframe>
-      </div>
+    <div id="map-wrap" style="height: 50vh">
+      <no-ssr>
+        <l-map :zoom=14 :center="[45.830405, 1.260010]">
+          <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
+          <l-marker :lat-lng="[45.843483, 1.263674]">
+            <l-popup>Resto du coeur</l-popup>
+          </l-marker>
+          <!--<l-marker :lat-lng="[45.843492,, 1.263609]"></l-marker>-->
+        </l-map>
+      </no-ssr>
     </div>
+    <br><br>
+
+
+   <!-- <div class="row d-flex justify-content-center mb-3">
+        <iframe src="https://www.google.com/maps/d/embed?mid=13QJZSsCv_kAqH-8Pv9OKvU6Cn28S8FRg" width="640" height="480"></iframe>
+    </div>
+    -->
 
     <div>
       <b-button class="btn-lg" variant="primary" href="/lieux">Voir les horaires des lieux</b-button>
     </div>
 
-  <div class="row">
-    <div class="col-md-8 mb-5">
-      <h2>A propos de l'ARSL</h2>
-      <hr>
-      <p>L’Association de réinsertion sociale du Limousin est une association
-        loi 1901 créée en 1961. Son objet est de lutter contre toutes les
-        formes d’exclusion sociale. Elle accueille des personnes en difficulté,
-        et les accompagne dans leur démarche d’intégration sociale et de citoyenneté.
-        L’ARSL est financée par l’Etat et par le Conseil départemental 87, la ville de Limoges,
-        la Caisse d’allocations familiales (CAF), et d’autres organismes. Elle emploie aujourd’hui
-        une centaine de salariés.</p>
-
-      <a class="btn btn-primary btn-lg" href="http://www.arsl.eu/">En savoir plus... &raquo;</a>
-    </div>
-    <div class="col-md-4 mb-5">
-      <h2>Contactez-nous</h2>
-      <hr>
-      <address>
-        <strong>Siège social</strong>
-        <br>11, Rue de Dion Bouton
-        <br>87280 Limoges
-        <br>
-      </address>
-      <address>
-        <abbr title="Phone">Téléphone :</abbr>
-        05 55 77 57 77
-        <br>
-        <abbr title="Email">Email :</abbr>
-        <a href="mailto:#"> arsl.sapmpm@wanadoo.fr</a>
-      </address>
-    </div>
-  </div>
-  <div class="row">
+  <div>
     <h2>Les associations</h2>
     <hr>
+    <p>Afin de lutter contre les exclusions sociales, l'Association de Réinsertion Sociale du Limousin s'est associée avec des associations humanitaires.
+    Celles-ci effectuent des maraudes à l'aide de bénévoles permettant de rencontrer les personnes en difficultés sociales et donc
+    leur proposer une aide. Ces associations et l'ARSL possèdent également des lieux d'accueil proposant de nombreuses prestations sociales. Ces lieux
+    sont indiqués sur la carte ci-dessus.</p>
+    <br>
   </div>
-  <!-- /.row -->
 
   <b-row>
       <div class="uk-card uk-card-default uk-grid-collapse w-25 m-1 mw-100 col col-lg-2 d-flex align-items-stretch align-content-stretch flex-wrap" v-for="association in filteredList" v-bind:key="association" uk-grid>
@@ -142,6 +85,41 @@
       </div>
   </b-row>
 
+  <!-- /.row -->
+  <div class="row">
+    <div class="col-md-8 mb-5">
+      <br>
+      <h2>A propos de l'ARSL</h2>
+      <hr>
+      <p>L’Association de réinsertion sociale du Limousin est une association
+        loi 1901 créée en 1961. Son objet est de lutter contre toutes les
+        formes d’exclusion sociale. Elle accueille des personnes en difficulté,
+        et les accompagne dans leur démarche d’intégration sociale et de citoyenneté.
+        L’ARSL est financée par l’Etat et par le Conseil départemental 87, la ville de Limoges,
+        la Caisse d’allocations familiales (CAF), et d’autres organismes. Elle emploie aujourd’hui
+        une centaine de salariés.</p>
+
+      <a class="btn btn-primary btn-lg" href="http://www.arsl.eu/">En savoir plus... &raquo;</a>
+    </div>
+    <div class="col-md-4 mb-5">
+      <br>
+      <h2>Contactez-nous</h2>
+      <hr>
+      <address>
+        <strong>Siège social</strong>
+        <br>11, Rue de Dion Bouton
+        <br>87280 Limoges
+        <br>
+      </address>
+      <address>
+        <abbr title="Phone">Téléphone :</abbr>
+        05 55 77 57 77
+        <br>
+        <abbr title="Email">Email :</abbr>
+        <a href="mailto:#"> arsl.sapmpm@wanadoo.fr</a>
+      </address>
+    </div>
+  </div>
 
 <footer id="foot" class="page-footer font-small blue pt-4">
   <div class="container-fluid text-center text-md-left">
@@ -207,8 +185,6 @@ export default {
     },
   }
 }
-
-
 </script>
 
 <style>
@@ -255,19 +231,15 @@ padding: 5px;
 margin-top: 5px;
 }
 
-#carte{
-  width:100%;
-}
-
-#map_canvas{
-  width:500px;
-  height:400px;
-}
-
 #foot{
   background-color: #343a40;
   margin-left: -40px;
   margin-right: -40px;
+}
+
+#map{
+  height:300px;
+  width:100%;
 }
 
 </style>

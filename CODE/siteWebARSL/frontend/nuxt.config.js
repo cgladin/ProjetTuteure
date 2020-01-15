@@ -43,6 +43,7 @@ export default {
   modules: [
     '@nuxtjs/apollo',
     'bootstrap-vue/nuxt',
+    'nuxt-leaflet',
   ],
 
   apollo: {
