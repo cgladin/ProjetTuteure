@@ -120,9 +120,12 @@
       </address>
     </div>
   </div>
-  <div class="row">
+  <div>
     <h2>Les associations</h2>
     <hr>
+    <p>Afin de lutter contre les exclusions sociales, l'Association de Réinsertion Sociale du Limousin s'est associée avec les associations suivantes.
+    Celles-ci effectuent des maraudes à l'aide de bénévoles permettant de rencontrer les personnes en difficultés sociales et donc
+    leur proposer une aide. Ces associations et l'ARSL possèdent également des lieux d'accueil proposant de nombreuses prestations sociales.</p>
   </div>
   <!-- /.row -->
 
