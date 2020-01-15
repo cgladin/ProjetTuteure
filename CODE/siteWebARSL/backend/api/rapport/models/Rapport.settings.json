@@ -11,11 +11,11 @@
     "comment": ""
   },
   "attributes": {
-    "formulaires": {
-      "collection": "formulaire"
-    },
     "Commentaire": {
       "type": "richtext"
+    },
+    "formulaires": {
+      "collection": "formulaire"
     }
   }
 }
