@@ -7,7 +7,10 @@
   },
   "options": {
     "increments": true,
-    "timestamps": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
     "comment": ""
   },
   "attributes": {
@@ -43,6 +46,9 @@
     },
     "demandeAcceptee": {
       "type": "boolean"
+    },
+    "situationHerbegement": {
+      "type": "text"
     }
   }
 }
