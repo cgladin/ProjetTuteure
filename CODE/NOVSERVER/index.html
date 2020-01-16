@@ -1,0 +1,430 @@
+<html>
+
+<style>
+body{
+	margin:0;
+}
+
+.chatRoom{
+	display:flex;
+	flex-direction:column;
+	background:#3F51B5;	
+	padding: 10px 20px;
+    font-family: monospace;	
+	border-radius: 20px;
+	margin: 10px 0 10px 0;
+	border-bottom: 7px solid #4caf50;
+	align-items:center;
+	color:#fff;
+	transition:border 250ms;
+}	
+
+.chatRoom > span:not(:first-child){
+	background:#4CAF50;
+	border-radius:50px;
+	font-size: 16px;
+	padding:5px 10px;
+}
+
+.chatRoom > span:first-child{	
+	background:none;
+	font-size: 36px;
+	padding:5px;
+	margin-bottom:5px;
+}
+
+.chatRoomOffline{
+	border-color:#E91E63;
+}
+
+.chatRoomOffline > span:not(:first-child){
+	background:#E91E63;
+}
+
+input, button{
+	outline: none;
+	border:none;
+	background:none;	
+}
+
+.main{
+	background:#202020;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height:100%;
+}
+
+.plchdInv::placeholder {
+  color: transparent;
+}
+
+.chatMainForm{
+	display:flex;
+	flex-direction: column;
+	background: #3F51B5;
+	width: 90%;
+	flex: 1;
+    border-radius: 20px;
+	overflow-y: hidden;	
+	margin-bottom:10px;
+}
+
+#offlineLayer{
+	display:none;
+	flex-direction:column;
+	position:absolute;
+	width:100%;
+	height:100%;
+	background:red;
+	opacity:0.8;
+	align-items:center;
+	justify-content:center;
+}
+
+#offlineLayer > span{
+	font-family:monospace;
+	font-size:xx-large;
+	color:#fff;
+	opacity:1;
+}
+
+.msgAndMemsPanel{
+	display:flex;
+    flex: 10;
+	overflow-y: auto;
+}
+
+#memPanel{
+	display:flex;
+	flex-direction: column;
+	border-left: 2px solid #344496;
+	max-width: 220px;
+	overflow-y: auto;
+	padding: 10px;
+}
+
+#memPanel > div:first-child{
+	color:#fff;
+	font-family:monospace;
+	font-size:large;
+	font-weight: bold;
+	margin-bottom:10px;
+	text-transform: uppercase;
+}
+
+.msgInputForm{
+    flex: 1;
+	display:flex;
+	background: #FFF;
+	border-bottom-left-radius:20px;
+}
+
+#msgInput{
+	flex:1;	
+	margin-left: 10px;
+	font-size: larger;
+	color:#1A237E;
+}
+
+#chat{
+    flex: 8;
+	padding: 10px 15px 10px 15px;
+	overflow-y: auto;
+}
+
+.memBlock{
+    display: flex;
+	background:#4CAF50;	
+	padding: 6px 10px 6px 6px;
+	border-radius:100px;
+	align-items:center;	
+    font-weight: bold;
+    font-family: monospace;
+	color:#FFF;
+	margin:2px 0;
+	transition:background 250ms;
+}
+
+.memBlock > div{
+	display:flex;
+	width:30px;
+	height:30px;
+	border-radius:100%;
+	background:#2E7D32;
+	margin-right: 5px;
+	font-size: x-large;
+	align-items: center;
+    justify-content: center;
+}
+
+.memBlockOffline {
+	background:#e91e63;
+}
+
+.memBlockOffline > div{
+	background:#880e4f;
+}
+
+.memBlock > span{	
+	white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1;
+	font-size: large;
+}
+
+.msgBlock{
+	display:flex;	
+	flex-direction: column;
+    font-family: monospace;    
+    margin-top: 4px;
+	padding:0 6px 0 6px;
+}
+
+.msgBlock > span:first-child{
+	color:#00f7e0;
+	font-weight:bold;
+	font-size: x-large;
+}
+
+.msgBlock > span:not(:first-child){
+	background: #344496;
+	color:#fff;
+	width: fit-content;
+	width: -moz-fit-content;
+	font-weight:bold;
+	font-size: large;    
+    padding: 7px 12px 7px 12px;
+    border-radius: 20px;
+    margin-top: 3px;
+}
+
+.sendButton{
+	display: flex;
+    align-items: center;
+	justify-content: center;
+	width: 50px;	
+}
+
+.sendButton:enabled{
+	cursor:pointer;
+}
+
+.sendButton:disabled{
+	opacity:.5;
+}
+
+.sendButton > svg > path {
+	fill: #232e66;
+	transition:fill 250ms;
+}
+
+.sendButton:enabled:hover > svg > path {
+	fill: #ff206e;
+}
+
+</style>
+
+<body onkeypress="onKeyPress()">
+
+    <div class="main">
+        <h1 id="chatRoom" class="chatRoom chatRoomOffline"><span>Chat Room 1.0</span><span>offline</span></h1>
+        <div class="chatMainForm">
+            <div class="msgAndMemsPanel">
+                <div id="chat">
+
+                </div>
+
+                <div id="memPanel">
+                    <div>Members - 0 online</div>
+                </div>
+
+            </div>
+			
+            <div class="msgInputForm">
+                <input type="text" id="msgInput" name="name" placeholder="Enter your message..." oninput="messageChanged(this)">
+                <button id="sendButton" class="sendButton" onclick="sendMsg()" disabled>
+                    <svg height="36px" width="36px" viewBox="0 0 36 36">
+                        <path d="M31.1059281,19.4468693 L10.3449666,29.8224462 C8.94594087,30.5217547 7.49043432,29.0215929 8.17420251,27.6529892 C8.17420251,27.6529892 10.7473302,22.456697 11.4550902,21.0955966 C12.1628503,19.7344961 12.9730756,19.4988922 20.4970248,18.5264632 C20.7754304,18.4904474 21.0033531,18.2803547 21.0033531,17.9997309 C21.0033531,17.7196073 20.7754304,17.5095146 20.4970248,17.4734988 C12.9730756,16.5010698 12.1628503,16.2654659 11.4550902,14.9043654 C10.7473302,13.5437652 8.17420251,8.34697281 8.17420251,8.34697281 C7.49043432,6.9788693 8.94594087,5.47820732 10.3449666,6.1775158 L31.1059281,16.553593 C32.298024,17.1488555 32.298024,18.8511065 31.1059281,19.4468693" fill="#0099ff"></path>
+                    </svg>
+                </button>
+            </div>
+			
+			<div id="offlineLayer"> <span>The Chat Room server has closed the connection</span><span>Reconnecting...</span>
+				<svg style="margin-top: 20px; background: none; display: block;" height="60px" viewBox="0 0 100 100">
+					<circle cx="28" cy="75" r="11" fill="#ffffff">
+						<animate attributeName="fill-opacity" repeatCount="indefinite" dur="1s" values="0;1;1" keyTimes="0;0.2;1" begin="0s"></animate>
+					</circle>
+					<path d="M28 47A28 28 0 0 1 56 75" fill="none" stroke="#ffffff" stroke-width="10">
+						<animate attributeName="stroke-opacity" repeatCount="indefinite" dur="1s" values="0;1;1" keyTimes="0;0.2;1" begin="0.1s"></animate>
+					</path>
+					<path d="M28 25A50 50 0 0 1 78 75" fill="none" stroke="#ffffff" stroke-width="10">
+						<animate attributeName="stroke-opacity" repeatCount="indefinite" dur="1s" values="0;1;1" keyTimes="0;0.2;1" begin="0.2s"></animate>
+					</path>
+				</svg>
+			</div>
+
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+
+var MESSAGE_DATE_TIME_LENGTH = 14;
+var lastMsgPseudo = null;
+var chatRoomIP = document.location.hostname, userPseudo = document.location.search.substr(8);
+
+var socket = io.connect(document.location.href);
+
+document.title = "Chat Room open for "+userPseudo;
+
+socket.on('loadChat', (chatSave)=>{
+	loadChat(chatSave);
+});
+
+socket.on('loadMembersInfo', (allMembersState, onlineMembersCt)=>{
+	loadMembersInfo(allMembersState, onlineMembersCt);
+});
+
+socket.on('newMessage', (pseudo, msg, msgDT)=>{
+	addMsg(pseudo, msg, msgDT);
+});	
+
+socket.on('connect', () => {
+	document.getElementById('offlineLayer').style.display = 'none';
+	document.getElementById('chatRoom').className = 'chatRoom';
+	document.getElementById('chatRoom').childNodes[1].innerHTML = chatRoomIP+' | online | '+userPseudo;
+});
+
+socket.on('disconnect', () => {
+	document.getElementById('offlineLayer').style.display = 'flex';
+	document.getElementById('chatRoom').className = 'chatRoom chatRoomOffline';
+	document.getElementById('chatRoom').childNodes[1].innerHTML = 'offline';
+});
+
+function messageChanged(msgInput){
+	var sendButt = document.getElementById("sendButton");
+	
+	if(msgInput.value != ""){
+		msgInput.className = "plchdInv"; 
+		sendButt.disabled = false;
+	}
+	else{
+		msgInput.className = ""; 
+		sendButt.disabled = true;
+	}
+}
+
+function sendMsg(){
+	var msgInput = document.getElementById("msgInput");
+	
+	if(msgInput.value == "")
+		return;
+	
+	socket.emit("newMessage", msgInput.value, currentDateTime());
+	msgInput.value = "";
+	document.getElementById("sendButton").disabled = true;
+}
+
+function addMsg(pseudo, msg, msgDT){
+	var chat = document.getElementById("chat");
+	var chatHTML = chat.innerHTML;
+	var escapedMsg = escapeHtml(msg);
+	
+	msgDT = formatDateTime(msgDT);
+	
+	if(lastMsgPseudo == pseudo){
+		chatHTML = chatHTML.substr(0, chatHTML.length-6);
+		chat.innerHTML = chatHTML+"<span title='"+msgDT+"'>"+escapedMsg+"</span></div>";
+	}
+	else{
+		if(lastMsgPseudo == null)
+			chat.innerHTML = "";
+	
+		chat.innerHTML += "<div class='msgBlock'><span>"+escapeHtml(pseudo)
+								+"</span><span title='"+msgDT+"'>"+escapedMsg+"</span></div>";	
+	}
+	
+	chat.scrollTop = chat.scrollHeight;	
+	lastMsgPseudo = pseudo;
+}
+
+function loadChat(chatSave){
+	document.getElementById("chat").innerHTML = "";
+	
+	if(chatSave == null){
+		addMsg("Server (Chat Room 1.0)", "Welcome to Chat Room 1.0", currentDateTime());		
+		lastMsgPseudo = null;
+		return;
+	}	
+	
+	lastMsgPseudo = null;
+	
+	var chatSaveList = chatSave.split('\n');
+	var pseudo;
+	for(var i=0; i<chatSaveList.length; i++){
+		if(chatSaveList[i][0] == 'p')
+			pseudo = chatSaveList[i].replace('p', '');
+		else if(chatSaveList[i][0] == 'm'){
+			var msg = "", msgDT = "";
+			
+			for(var j=1; j<chatSaveList[i].length; j++){
+				if(j <= MESSAGE_DATE_TIME_LENGTH)
+					msgDT += chatSaveList[i][j];
+				else
+					msg += chatSaveList[i][j];
+			}
+			
+			addMsg(pseudo, msg, msgDT);
+		}
+	}
+}
+
+function loadMembersInfo(allMembersState, onlineMembersCt){
+	var memPanel = document.getElementById("memPanel");
+	
+	memPanel.innerHTML = "";
+	
+	for (const [memberPseudo, isOnline] of Object.entries(allMembersState)) {
+		if(isOnline)
+			memPanel.innerHTML = "<div class='memBlock'><div><span>"+memberPseudo[0]+"</span></div><span>"+memberPseudo+"</span></div>"
+									+memPanel.innerHTML;
+		
+		else
+			memPanel.innerHTML += "<div class='memBlock memBlockOffline'><div><span>"+memberPseudo[0]+"</span></div><span>"+memberPseudo+"</span></div>";								
+	}
+	
+	memPanel.innerHTML = "<div>Members  -  "+onlineMembersCt+" online</div>" + memPanel.innerHTML;
+}
+
+function onKeyPress(){
+	if(event.key !== "Enter") return;
+		sendMsg();		
+}
+
+function formatDateTime(dt){
+	//dd/MM/yyyy at hh:mm:ss
+	return dt[0]+dt[1]+'/'+dt[2]+dt[3]+'/'+dt[4]+dt[5]+dt[6]+dt[7]+' at '+dt[8]+dt[9]+':'+dt[10]+dt[11]+':'+dt[12]+dt[13];
+}
+
+function currentDateTime(){
+	//ddMMyyyyhhmmss
+	var dt = new Date();
+	return ''+dt.getDate()+(dt.getMonth()+1)+dt.getFullYear()+dt.getHours()+dt.getMinutes()+dt.getSeconds();
+}
+
+function escapeHtml(unsafe) {
+    return unsafe
+         .replace(/&/g, "&amp;")
+         .replace(/</g, "&lt;")
+         .replace(/>/g, "&gt;")
+         .replace(/"/g, "&quot;")
+         .replace(/'/g, "&#039;");
+ }
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,300 @@
+<html>
+
+<style>
+body{
+	margin:0;
+}
+
+.chatRoom{
+	display:flex;
+	flex-direction:column;
+	background:#3F51B5;	
+	padding: 10px 20px;
+    font-family: monospace;	
+	border-radius: 20px;
+	margin: 10px 0 10px 0;
+	border-bottom: 7px solid #1A237E;
+	align-items:center;
+	color:#fff;
+	transition:border 250ms;
+}	
+.chatRoom > span{	
+	background:none;
+	font-size: 36px;
+	padding:5px;
+	margin-bottom:5px;
+}
+
+input, button{
+	outline: none;
+	border:none;
+	background:none;	
+}
+
+.main{
+	background:#202020;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height:100%;
+}
+
+.enterRoomForm{
+	display: flex;
+    flex-direction: column;
+	align-items: center;
+    background: #3F51B5;
+    padding: 10px 30px;
+    margin-top: 30px;
+    font-family: monospace;
+    color: #FFF;
+    font-size: x-large;
+    border-radius: 26px;
+    border: 6px solid #1A237E;
+}
+
+.enterRoomForm > div:first-child{
+	display: flex;
+	min-height:100px;
+}
+
+.enterRoomForm > div:first-child > div{
+	display: flex;
+	flex-direction:column;
+	margin:0 10px 0 10px;
+	justify-content: space-evenly;
+	color:#FFF;
+	font-weight: bold;
+}
+
+#enterRoomButton{	
+    display: flex;
+	align-items:center;
+	margin: 20px 0 5px;
+	padding: 10px 15px 10px 6px;
+	background:#1A237E;
+	color: #FFF;
+    font-weight: bold;
+	border-radius: 5px;
+	transition:all 250ms;
+	border:3px solid #FFF;
+	cursor:pointer;
+}
+
+#enterRoomButton:hover{
+	background:#FFF;
+	color:#1A237E;
+}
+
+#enterRoomButton:hover{
+	background:#FFF;
+	color:#1A237E;
+}
+
+#enterRoomButton > svg{
+	transition:height 250ms;
+}
+
+#enterRoomButton:hover > svg > path{
+	stroke:#1A237E;
+}
+
+#enterRoomButton:hover > svg > circle{
+	fill:#1A237E;
+}
+
+.chatRoomEnterInput{
+	color:#FFF;
+	font-family:monospace;
+	font-size:x-large;
+    border-bottom: 2px solid #1A237E;
+	transition:border-bottom-color 150ms;
+}
+
+.chatRoomEnterInput::placeholder {
+  color: #1A237E;
+}
+
+.chatRoomEnterInput:focus{
+  border-color: #FFF;
+}
+
+#errorDlg{
+	display: flex;
+	opacity:0;
+	visibility:visibile;
+	flex-direction:column;
+	align-items:center;
+    border-radius: 20px;
+	margin-top: -30px;
+	padding:20px;
+    box-shadow: 0 0 10px 0px #000;
+	transition:all 250ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+#errorDlg > div{
+	color:#FFF;
+	font-family:monospace;
+	font-size:x-large;
+	margin:30px 10px 10px 10px;
+	text-align: center;
+}
+
+#errorDlgModal{
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	position:absolute;
+	width:100%;
+	height:100%;
+	visibility:hidden;
+}
+
+</style>
+
+<body onkeypress="onKeyPress()"><!--Si key differente de entrer alors faire-->
+
+    <div class="main">
+        <h1 id="chatRoom chatRoomOffline" class="chatRoom"><span>Chat Room 1.0</span></h1>
+		<div class="enterRoomForm">
+			<div>
+				<div>
+					<div>Chat Room IP</div>
+					<div>Pseudo</div>
+				</div>
+				<div>
+					<input id="chatRoomIP" class="chatRoomEnterInput" placeholder="127.0.0.1" value="127.0.0.1" title="IP address (e.g 192.168.1.2)" oninput="chatRoomIPChanged(this)">
+					<input id="userPseudo" class="chatRoomEnterInput" placeholder="Enter your pseudo" value="Ali" oninput="userPseudoChanged(this)">
+				</div>
+				<div>
+					<div id="chatRoomIPErr" title="Invalid IP Address !" style="opacity:0;transition:opacity 150ms">❌</div>
+					<div id="userPseudoErr" title="Invalid Pseudo name !" style="opacity:0;transition:opacity 150ms">❌</div>
+				</div>
+			</div>
+			<div id="enterRoomButton"><svg style="background: none; height:0px; margin-right:10px;" viewBox="0 0 100 100">
+					<circle cx="28" cy="75" r="11" fill="#ffffff">
+						<animate attributeName="fill-opacity" repeatCount="indefinite" dur="1s" values="0;1;1" keyTimes="0;0.2;1" begin="0s"></animate>
+					</circle>
+					<path d="M28 47A28 28 0 0 1 56 75" fill="none" stroke="#ffffff" stroke-width="10">
+						<animate attributeName="stroke-opacity" repeatCount="indefinite" dur="1s" values="0;1;1" keyTimes="0;0.2;1" begin="0.1s"></animate>
+					</path>
+					<path d="M28 25A50 50 0 0 1 78 75" fill="none" stroke="#ffffff" stroke-width="10">
+						<animate attributeName="stroke-opacity" repeatCount="indefinite" dur="1s" values="0;1;1" keyTimes="0;0.2;1" begin="0.2s"></animate>
+					</path></svg>
+					
+				<span>Enter The Room</span>
+			</div>			
+		</div>
+		
+		<div id="errorDlgModal">
+			<div id="errorDlg"><svg height="80px" viewBox="0 0 24 24"><path style="fill:#FFF;" d="M12,0C5.373,0,0,5.373,0,12s5.373,12,12,12s12-5.373,12-12S18.627,0,12,0z M12,19.66
+																								  c-0.938,0-1.58-0.723-1.58-1.66c0-0.964,0.669-1.66,1.58-1.66c0.963,0,1.58,0.696,1.58,1.66C13.58,18.938,12.963,19.66,12,19.66z
+																								  M12.622,13.321c-0.239,0.815-0.992,0.829-1.243,0c-0.289-0.956-1.316-4.585-1.316-6.942c0-3.11,3.891-3.125,3.891,0
+																								  C13.953,8.75,12.871,12.473,12.622,13.321z"/></svg><div></div>
+			</div>
+		</div>
+    </div>
+
+    <script type="text/javascript">
+	
+	var PSEUDO_ALREADY_USED_ERROR = 403;
+	
+	window.onclick = ()=> {		
+		dispErrDlg(null);
+	};
+	
+	document.getElementById('errorDlg').onclick = (event)=>{
+		event.stopPropagation();
+	};
+	
+	document.getElementById('enterRoomButton').onclick = (event)=>{
+		document.getElementById('enterRoomButton').childNodes[0].style.height = "25px";
+		enterChatRoom();
+		event.stopPropagation();
+	};
+
+	function enterChatRoom(){		
+		var chatRoomIP = document.getElementById('chatRoomIP');
+		var userPseudo = document.getElementById('userPseudo');
+
+		if(chatRoomIP.value == '' ||  userPseudo.value == '' || document.getElementById('chatRoomIPErr').opacity == 1 || document.getElementById('userPseudoErr').opacity == 1){
+			chatRoomIPChanged(chatRoomIP);
+			userPseudoChanged(userPseudo);
+			return;
+		}
+				
+		var testedUrl = 'http://'+chatRoomIP.value+':8080/?pseudo='+userPseudo.value;
+
+		fetch( testedUrl )
+			.then( async (r)=> onUrlTestFinish(testedUrl, true, await r) )
+			.catch( (e)=> onUrlTestFinish(testedUrl, false) );
+	}
+
+	function chatRoomIPChanged(chatRoomIP){
+		
+		var chatRoomIPErr = document.getElementById('chatRoomIPErr');
+		
+		if (/^(localhost)|(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(chatRoomIP.value)){
+			chatRoomIP.style.borderColor = '#FFF';
+			chatRoomIPErr.style.opacity = 0;
+		}
+		else{
+			chatRoomIP.style.borderColor = '#f44336';
+			chatRoomIPErr.style.opacity = 1;
+		}
+	}
+
+	function userPseudoChanged(userPseudo){
+		var userPseudoErr = document.getElementById('userPseudoErr');
+		
+		if (/^(\w+\s)*\w+$/.test(userPseudo.value)){
+			userPseudo.style.borderColor = '#FFF';
+			userPseudoErr.style.opacity = 0;
+		}
+		else{
+			userPseudo.style.borderColor = '#f44336';
+			userPseudoErr.style.opacity = 1;
+		}
+	}
+	
+	function onUrlTestFinish(testedUrl, chatRoomOpened, chatRoomResp){
+		document.getElementById('enterRoomButton').childNodes[0].style.height = "0px";		
+		
+		if(chatRoomOpened && chatRoomResp.ok)
+			document.location.href = testedUrl;
+			
+		else if(chatRoomOpened && chatRoomResp.status == PSEUDO_ALREADY_USED_ERROR)
+			dispErrDlg('The pseudo `<b>'+document.getElementById('userPseudo').value+'</b>` is already used.<br>Try again with a different pseudo.', '#ef6c00');						
+		else
+			dispErrDlg("We coudln't reach the <b>Chat Room</b>.<br>Check the <i>IP Adress</i> and try again.", 'red');
+	}
+	
+	function dispErrDlg(msg, bgClr){
+		var errorDlg = document.getElementById('errorDlg');
+		var errorDlgModal = document.getElementById('errorDlgModal');
+		
+		if(msg == null){
+			errorDlgModal.style.visibility = 'hidden';
+			errorDlg.style.visibility = 'hidden';
+			errorDlg.style.opacity = 0;
+			errorDlg.style.marginTop = '-30px';
+		}
+		else{
+			errorDlgModal.style.visibility = 'visible';
+			errorDlg.childNodes[1].innerHTML = msg;
+			errorDlg.style.background = bgClr;
+			errorDlg.style.visibility = 'visible';
+			errorDlg.style.opacity = 1;
+			errorDlg.style.marginTop = 0;
+		}
+	}
+
+	function onKeyPress(){
+		if(event.key !== "Enter") return;
+			enterChatRoom();		
+	}
+
+	</script>
+</body>
+</html>
