@@ -23,7 +23,7 @@ app.get('/', function (req, res) {
 	}
 	
 	lastConnMemberPseudo = req.query.pseudo;
-	res.sendFile(__dirname + '/index.html');
+	res.sendFile(__dirname + '/tchat.html');
 });
 
 io.sockets.on('connection', (socket)=>{
