@@ -23,10 +23,6 @@
     "adressePostale": {
       "type": "text"
     },
-    "prestation": {
-      "model": "prestation",
-      "via": "lieus"
-    },
     "HoraireMatinLundi": {
       "type": "string"
     },
@@ -76,6 +72,16 @@
     "association": {
       "model": "association",
       "via": "lieus"
+    },
+    "latitude": {
+      "type": "decimal"
+    },
+    "longitude": {
+      "type": "decimal"
+    },
+    "prestations": {
+      "collection": "prestation",
+      "via": "lieuses"
     }
   }
 }
