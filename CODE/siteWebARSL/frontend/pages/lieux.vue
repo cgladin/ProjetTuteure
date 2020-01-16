@@ -6,6 +6,39 @@
             </div>
         </div>
 
+        <br>
+        <div>
+          <div class="ml-5 d-flex flex-row border border-warning rounded py-3 px-3">
+            <div class="questions">
+              <div>
+                <img src="pictogramme_manger.jpg" id="picto_manger" alt="picto_manger">
+              </div>
+              <div>
+                <p><a href="#" class="text-dark">Où manger ?</a></p>
+              </div>
+            </div>
+            <br>
+            <div class="questions">
+              <div>
+                <img src="pictogramme_dormir.png" id="picto_dormir" alt="picto_dormir">
+              </div>
+              <div>
+                <p><a href="#" class="text-dark">Où dormir ?</a></p>
+              </div>
+            </div>
+            <br>
+            <div class="questions">
+              <div>
+                <img src="pictogramme_douche.png" id="picto_douche" alt="picto_douche">
+              </div>
+              <div>
+                <p><a href="#" class="text-dark">Où se laver ?</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+
         <div class="card text-center" id="carte" v-for="lieu in filteredList" v-bind:key="lieu" uk-grid>
                 <div class="card-body">
                     <h3 class="card-title">{{ lieu.nom }}</h3>
@@ -101,6 +134,19 @@ export default {
     }
     #titre{
         margin-top:4%;
+    }
+    #picto_manger{
+      width: 40%;
+    }
+    #picto_dormir{
+      width: 41%;
+    }
+    #picto_douche{
+      width: 41%;
+    }
+    .questions{
+      display: grid;
+      grid-template-columns: 100px 15rem;
     }
 </style>
 
