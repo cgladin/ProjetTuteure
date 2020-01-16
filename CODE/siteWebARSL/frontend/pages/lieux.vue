@@ -8,33 +8,18 @@
 
         <br>
         <div>
-          <div class="ml-5 d-flex flex-row border border-warning rounded py-3 px-3">
-            <div class="questions">
-              <div>
-                <img src="pictogramme_manger.jpg" id="picto_manger" alt="picto_manger">
-              </div>
-              <div>
-                <p><a href="#" class="text-dark">Où manger ?</a></p>
-              </div>
-            </div>
-            <br>
-            <div class="questions">
-              <div>
-                <img src="pictogramme_dormir.png" id="picto_dormir" alt="picto_dormir">
-              </div>
-              <div>
-                <p><a href="#" class="text-dark">Où dormir ?</a></p>
-              </div>
-            </div>
-            <br>
-            <div class="questions">
-              <div>
-                <img src="pictogramme_douche.png" id="picto_douche" alt="picto_douche">
-              </div>
-              <div>
-                <p><a href="#" class="text-dark">Où se laver ?</a></p>
-              </div>
-            </div>
+          <div class="d-flex justify-content-around border border-warning rounded py-3 px-3">
+              <b-row>
+                <b-col>
+                  <a href="#" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true"><img src="pictogramme_manger.jpg" id="picto_manger" alt="picto_manger"> Où manger ?</a>
+                </b-col>
+                <b-col>
+                  <a href="#" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true"><img src="pictogramme_dormir.png" id="picto_dormir" alt="picto_dormir"> Où dormir ?</a>
+                </b-col>
+                <b-col>
+                  <a href="#" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true"><img src="pictogramme_douche.png" id="picto_douche" alt="picto_douche"> Où se doucher ?</a>
+                </b-col>
+              </b-row>
           </div>
         </div>
         <br>
@@ -136,17 +121,16 @@ export default {
         margin-top:4%;
     }
     #picto_manger{
-      width: 40%;
+      width: 50px;
+      height: 50px;
     }
     #picto_dormir{
-      width: 41%;
+      width: 50px;
+      height: 50px;
     }
     #picto_douche{
-      width: 41%;
-    }
-    .questions{
-      display: grid;
-      grid-template-columns: 100px 15rem;
+      width: 50px;
+      height: 50px;
     }
 </style>
 
