@@ -272,9 +272,9 @@ function escapeHtml(unsafe) {
         background: #343a40;
         width: 90%;
         flex: 1;
+        border:2px solid;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
-        overflow-y: hidden;
         margin-bottom:10px;
     }
 
@@ -306,7 +306,7 @@ function escapeHtml(unsafe) {
     #memPanel{
         display:flex;
         flex-direction: column;
-        border: 3px solid #000000;
+        border-bottom: 2px solid #000000;
         border-top-right-radius: 15px;
         background: #FFFFFF;
         max-width: 220px;
@@ -339,7 +339,6 @@ function escapeHtml(unsafe) {
     #chat{
         flex: 8;
         height: 500px;
-        
         padding: 10px 15px 10px 15px;
         overflow: auto;
     }
@@ -433,6 +432,24 @@ function escapeHtml(unsafe) {
 
     .sendButton:enabled:hover > svg > path {
         fill: #ff206e;
+    }
+    @media (max-width: 990px) {
+        html, body{
+            margin :0;
+            padding: 0;
+            height: 100%;}
+        #memPanel{
+            display: none;
+        }
+        .chatRoom{
+            display: none;
+        }
+        #chat{
+            height: 90%;
+        }
+        .chatMainForm{
+            margin-top: 10%;
+        }
     }
 
 </style>
