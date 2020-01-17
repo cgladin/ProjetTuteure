@@ -1,13 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cca4bda2-496a-4bb3-a601-70db65d5de71" name="Default Changelist" comment="" />
+    <list default="true" id="cca4bda2-496a-4bb3-a601-70db65d5de71" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StyleConnexion.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat.txt" beforeDir="false" afterPath="$PROJECT_DIR$/chat.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client.html" beforeDir="false" afterPath="$PROJECT_DIR$/connexion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tchat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/members.txt" beforeDir="false" afterPath="$PROJECT_DIR$/members.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="ProjectId" id="1VhedBIjVAxJAGGybnbd4McjuB3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -17,6 +39,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -74,6 +97,7 @@
       <workItem from="1578224406654" duration="521000" />
       <workItem from="1578224945472" duration="801000" />
       <workItem from="1579102734184" duration="862000" />
+      <workItem from="1579160369799" duration="6558000" />
     </task>
     <servers />
   </component>
@@ -81,21 +105,29 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1515" height="190" key="GridCell.Tab.0.bottom" timestamp="1579157231221">
-      <screen x="0" y="40" width="1536" height="824" />
+    <state x="690" y="-774" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579162477289">
+      <screen x="0" y="-1040" width="1920" height="1040" />
     </state>
+    <state x="690" y="-774" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.40.1536.824/0.-1040.1920.1040@0.-1040.1920.1040" timestamp="1579162477289" />
+    <state width="1899" height="261" key="GridCell.Tab.0.bottom" timestamp="1579163113250">
+      <screen x="0" y="-1040" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="261" key="GridCell.Tab.0.bottom/0.40.1536.824/0.-1040.1920.1040@0.-1040.1920.1040" timestamp="1579163113250" />
     <state width="1515" height="190" key="GridCell.Tab.0.bottom/0.40.1536.824/0.-1040.1920.1040@0.40.1536.824" timestamp="1579157231221" />
-    <state width="1515" height="190" key="GridCell.Tab.0.center" timestamp="1579157231221">
-      <screen x="0" y="40" width="1536" height="824" />
+    <state width="1899" height="261" key="GridCell.Tab.0.center" timestamp="1579163113249">
+      <screen x="0" y="-1040" width="1920" height="1040" />
     </state>
+    <state width="1899" height="261" key="GridCell.Tab.0.center/0.40.1536.824/0.-1040.1920.1040@0.-1040.1920.1040" timestamp="1579163113249" />
     <state width="1515" height="190" key="GridCell.Tab.0.center/0.40.1536.824/0.-1040.1920.1040@0.40.1536.824" timestamp="1579157231221" />
-    <state width="1515" height="190" key="GridCell.Tab.0.left" timestamp="1579157231220">
-      <screen x="0" y="40" width="1536" height="824" />
+    <state width="1899" height="261" key="GridCell.Tab.0.left" timestamp="1579163113249">
+      <screen x="0" y="-1040" width="1920" height="1040" />
     </state>
+    <state width="1899" height="261" key="GridCell.Tab.0.left/0.40.1536.824/0.-1040.1920.1040@0.-1040.1920.1040" timestamp="1579163113249" />
     <state width="1515" height="190" key="GridCell.Tab.0.left/0.40.1536.824/0.-1040.1920.1040@0.40.1536.824" timestamp="1579157231220" />
-    <state width="1515" height="190" key="GridCell.Tab.0.right" timestamp="1579157231221">
-      <screen x="0" y="40" width="1536" height="824" />
+    <state width="1899" height="261" key="GridCell.Tab.0.right" timestamp="1579163113250">
+      <screen x="0" y="-1040" width="1920" height="1040" />
     </state>
+    <state width="1899" height="261" key="GridCell.Tab.0.right/0.40.1536.824/0.-1040.1920.1040@0.-1040.1920.1040" timestamp="1579163113250" />
     <state width="1515" height="190" key="GridCell.Tab.0.right/0.40.1536.824/0.-1040.1920.1040@0.40.1536.824" timestamp="1579157231221" />
   </component>
 </project>

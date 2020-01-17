@@ -7,7 +7,10 @@
   },
   "options": {
     "increments": true,
-    "timestamps": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
     "comment": ""
   },
   "attributes": {
@@ -17,9 +20,52 @@
     "description": {
       "type": "richtext"
     },
-    "lieus": {
+    "HoraireMatinLundi": {
+      "type": "string"
+    },
+    "HoraireApremLundi": {
+      "type": "string"
+    },
+    "HoraireMatinMardi": {
+      "type": "string"
+    },
+    "HoraireApremMardi": {
+      "type": "string"
+    },
+    "HoraireMatinMercredi": {
+      "type": "string"
+    },
+    "HoraireApremMercredi": {
+      "type": "string"
+    },
+    "HoraireMatinJeudi": {
+      "type": "string"
+    },
+    "HoraireApremJeudi": {
+      "type": "string"
+    },
+    "HoraireMatinVendredi": {
+      "type": "string"
+    },
+    "HoraireApremVendredi": {
+      "type": "string"
+    },
+    "HoraireMatinSamedi": {
+      "type": "string"
+    },
+    "HoraireApremSamedi": {
+      "type": "string"
+    },
+    "HoraireMatinDimanche": {
+      "type": "string"
+    },
+    "HoraireApremDimanche": {
+      "type": "string"
+    },
+    "lieuses": {
       "collection": "lieu",
-      "via": "prestation"
+      "via": "prestations",
+      "dominant": true
     }
   }
 }

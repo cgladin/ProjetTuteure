@@ -44,12 +44,12 @@
     "telephone": {
       "type": "integer"
     },
+    "siteWeb": {
+      "type": "string"
+    },
     "lieus": {
       "collection": "lieu",
       "via": "association"
-    },
-    "siteWeb": {
-      "type": "string"
     }
   }
 }
