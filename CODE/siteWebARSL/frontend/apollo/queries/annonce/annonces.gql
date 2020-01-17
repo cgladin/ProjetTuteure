@@ -1,0 +1,8 @@
+query Annonces {
+  annonces {
+    id
+    personne
+    titre
+    description
+  }
+}
