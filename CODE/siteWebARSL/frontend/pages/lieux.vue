@@ -8,17 +8,17 @@
 
         <br>
         <div>
-          <div class="d-flex justify-content-around border border-warning rounded py-3 px-3">
+          <div class="d-flex bd-highlight justify-content-around border border-warning rounded py-3 px-3">
               <b-row>
-                <b-col>
+                <div class="p-2 flex-fill bd-highlight">
                   <a href="#" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true"><img src="pictogramme_manger.jpg" id="picto_manger" alt="picto_manger"> Où manger ?</a>
-                </b-col>
-                <b-col>
+                </div>
+                <div class="p-2 flex-fill bd-highlight">
                   <a href="#" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true"><img src="pictogramme_dormir.png" id="picto_dormir" alt="picto_dormir"> Où dormir ?</a>
-                </b-col>
-                <b-col>
+                </div>
+                <div class="p-2 flex-fill bd-highlight">
                   <a href="#" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true"><img src="pictogramme_douche.png" id="picto_douche" alt="picto_douche"> Où se doucher ?</a>
-                </b-col>
+                </div>
               </b-row>
           </div>
         </div>
