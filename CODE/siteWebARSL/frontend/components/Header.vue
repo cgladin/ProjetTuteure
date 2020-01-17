@@ -16,7 +16,7 @@
                <b-collapse id="collapse-1" class="mt-2">
                   <b-card class="bg-dark">
                      <router-link tag="a" class="nav-link text-white" to="/associations" exact>Associations</router-link>
-                     <a class="nav-link text-white" href="http://localhost:1337/admin/auth/login">Se connecter</a>
+                     <router-link tag="a" class="nav-link text-white" to="/users/connexion" exact>Se connecter</router-link>
                   </b-card>
                </b-collapse>
             </div>
@@ -44,7 +44,7 @@
             // ]]>
          </script>
          <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
-         
+
       </nav>
 
    </client-only>
