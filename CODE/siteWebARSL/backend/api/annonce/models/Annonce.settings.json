@@ -11,15 +11,15 @@
     "comment": ""
   },
   "attributes": {
-    "personne": {
-      "model": "personne",
-      "via": "annonces"
-    },
     "titre": {
       "type": "string"
     },
     "description": {
       "type": "richtext"
+    },
+    "personne": {
+      "model": "personne",
+      "via": "annonces"
     }
   }
 }

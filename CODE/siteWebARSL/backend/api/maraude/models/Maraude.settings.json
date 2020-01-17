@@ -1,0 +1,29 @@
+{
+  "connection": "default",
+  "collectionName": "groupes",
+  "info": {
+    "name": "maraude",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "trajet": {
+      "model": "trajet",
+      "via": "groupes"
+    },
+    "nomGroupe": {
+      "type": "string"
+    },
+    "personnes": {
+      "collection": "personne",
+      "via": "maraudes"
+    }
+  }
+}
