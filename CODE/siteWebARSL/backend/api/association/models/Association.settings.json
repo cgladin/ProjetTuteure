@@ -22,10 +22,6 @@
       "via": "related",
       "plugin": "upload"
     },
-    "personnes": {
-      "collection": "personne",
-      "via": "assocation"
-    },
     "horaireOuverture": {
       "type": "date"
     },
@@ -50,6 +46,10 @@
     "lieus": {
       "collection": "lieu",
       "via": "association"
+    },
+    "personnes": {
+      "collection": "personne",
+      "via": "assocation"
     }
   }
 }

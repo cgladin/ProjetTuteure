@@ -13,6 +13,10 @@
   "attributes": {
     "listeRue": {
       "type": "richtext"
+    },
+    "groupes": {
+      "collection": "maraude",
+      "via": "trajet"
     }
   }
 }

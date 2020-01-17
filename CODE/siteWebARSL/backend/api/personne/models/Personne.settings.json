@@ -33,6 +33,14 @@
     "assocation": {
       "model": "association",
       "via": "personnes"
+    },
+    "maraudes": {
+      "collection": "maraude",
+      "via": "personnes",
+      "dominant": true
+    },
+    "responsable": {
+      "type": "boolean"
     }
   }
 }

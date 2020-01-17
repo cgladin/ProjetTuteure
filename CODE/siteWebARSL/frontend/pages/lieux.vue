@@ -6,6 +6,24 @@
             </div>
         </div>
 
+        <br>
+        <div>
+          <div class="d-flex bd-highlight justify-content-around border border-warning rounded py-3 px-3">
+              <b-row>
+                <div class="p-2 flex-fill bd-highlight">
+                  <a href="#" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true"><img src="pictogramme_manger.jpg" id="picto_manger" alt="picto_manger"> Où manger ?</a>
+                </div>
+                <div class="p-2 flex-fill bd-highlight">
+                  <a href="#" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true"><img src="pictogramme_dormir.png" id="picto_dormir" alt="picto_dormir"> Où dormir ?</a>
+                </div>
+                <div class="p-2 flex-fill bd-highlight">
+                  <a href="#" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true"><img src="pictogramme_douche.png" id="picto_douche" alt="picto_douche"> Où se laver ?</a>
+                </div>
+              </b-row>
+          </div>
+        </div>
+        <br>
+
         <div class="card text-center" id="carte" v-for="lieu in filteredList" v-bind:key="lieu" uk-grid>
                 <div class="card-body">
                     <h3 class="card-title">{{ lieu.nom }}</h3>
@@ -101,6 +119,18 @@ export default {
     }
     #titre{
         margin-top:4%;
+    }
+    #picto_manger{
+      width: 50px;
+      height: 50px;
+    }
+    #picto_dormir{
+      width: 50px;
+      height: 50px;
+    }
+    #picto_douche{
+      width: 50px;
+      height: 50px;
     }
 </style>
 
