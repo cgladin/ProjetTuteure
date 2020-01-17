@@ -17,7 +17,7 @@
                   <a href="#" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true"><img src="pictogramme_dormir.png" id="picto_dormir" alt="picto_dormir"> Où dormir ?</a>
                 </div>
                 <div class="p-2 flex-fill bd-highlight">
-                  <a href="#" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true"><img src="pictogramme_douche.png" id="picto_douche" alt="picto_douche"> Où se doucher ?</a>
+                  <a href="#" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true"><img src="pictogramme_douche.png" id="picto_douche" alt="picto_douche"> Où se laver ?</a>
                 </div>
               </b-row>
           </div>
