@@ -7,14 +7,23 @@
   },
   "options": {
     "increments": true,
-    "timestamps": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
     "comment": ""
   },
   "attributes": {
-    "listeRue": {
+    "nomTrajet": {
+      "type": "string"
+    },
+    "lieuDepart": {
       "type": "richtext"
     },
-    "groupes": {
+    "lieuArrivee": {
+      "type": "richtext"
+    },
+    "maraudes": {
       "collection": "maraude",
       "via": "trajet"
     }

@@ -1,0 +1,17 @@
+query Maraudes {
+  maraudes {
+    id
+    nomGroupe
+    personnes {
+        id
+        nom
+        prenom
+    }
+    maraudeTerminee
+    trajet{
+      	id
+      	lieuDepart
+      	lieuArrivee
+    }
+  }
+}

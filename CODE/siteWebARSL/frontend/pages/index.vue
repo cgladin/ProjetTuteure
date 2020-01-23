@@ -35,7 +35,6 @@
          </div>
       </header>
 
-
       <div id="map-wrap" style="height: 50vh">
          <no-ssr>
             <l-map :zoom=14 :center="[45.830405, 1.260010]">
@@ -55,7 +54,6 @@
       <div>
          <b-button class="btn-lg" variant="primary" href="/lieux">Voir les horaires des lieux</b-button>
       </div>
-
 
       <div>
          <h2>Les associations</h2>
@@ -144,12 +142,13 @@
          </div>
       </footer>
 
-      
+
    </div>
 </template>
 
 <script>
    import associationsQuery from '~/apollo/queries/association/associations'
+   import maraudesQuery from '~/apollo/queries/maraude/maraudes'
 
    export default {
 
@@ -173,6 +172,10 @@
        associations: {
          prefetch: true,
          query: associationsQuery
+       },
+       maraudes: {
+         prefetch: true,
+         query: maraudesQuery
        }
      },
      computed: {
