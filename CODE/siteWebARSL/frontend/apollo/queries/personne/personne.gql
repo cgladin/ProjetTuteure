@@ -1,0 +1,8 @@
+query Personne($id: ID!) {
+  personne(id: $id) {
+    id
+    nom
+    prenom
+    email
+  }
+}
