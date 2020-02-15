@@ -38,7 +38,7 @@ import strapi from '~/utils/Strapi'
 export default {
   data() {
     return {
-      email: '',
+      nom: '',
       password: '',
       loading: false
     }
@@ -48,7 +48,7 @@ export default {
       try {
         this.loading = true
         const response = await strapi.login(
-          this.email,
+          this.nom,
           this.password
         )
         this.loading = false
