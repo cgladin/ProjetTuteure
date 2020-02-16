@@ -54,25 +54,16 @@
   <b-button class="btn-lg" variant="primary" href="/lieux">Voir les horaires des lieux</b-button>
 </div>
 
-
-<div>
-  <h2>Les associations</h2>
-  <hr>
-  <p>Afin de lutter contre les exclusions sociales, l'Association de Réinsertion Sociale du Limousin s'est associée avec des associations humanitaires.
-    Celles-ci effectuent des maraudes à l'aide de bénévoles permettant de rencontrer les personnes en difficultés sociales et donc
-    leur proposer une aide. Ces associations et l'ARSL possèdent également des lieux d'accueil proposant de nombreuses prestations sociales. Ces lieux
-    sont indiqués sur la carte ci-dessus.
-  </p>
-  <br>
-</div>
-<b-row>
-  <div class="uk-card uk-card-default uk-grid-collapse w-25 m-1 mw-100 col col-lg-2 d-flex align-items-stretch align-content-stretch flex-wrap" v-for="association in filteredList" v-bind:key="association" uk-grid>
-    <div class="card ">
-      <img class="card-img-top card-sm" :src="'http://localhost:1337/' + association.image.url" alt="">
-      <div class="card-body">
-        <h4 class="card-title">{{ association.nom }}</h4>
-        <p class="card-text"> {{ association.adressePostale }} </p>
-        <p class="card-text"> 0{{ association.telephone }} </p>
+      <div id="map-wrap" style="height: 50vh">
+         <no-ssr>
+            <l-map :zoom=14 :center="[45.830405, 1.260010]">
+               <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
+               <l-marker :lat-lng="[45.843483, 1.263674]">
+                  <l-popup>Resto du coeur</l-popup>
+               </l-marker>
+               <!--<l-marker :lat-lng="[45.843492,, 1.263609]"></l-marker>-->
+            </l-map>
+         </no-ssr>
       </div>
       <div class="card-footer">
         <a href="#" class="btn btn-primary">VOIR L'ASSOCIATION</a>
@@ -81,41 +72,31 @@
   </div>
 </b-row>
 
-
-<div class="row">
-  <div class="col-md-8 mb-5">
-    <br>
-    <h2>A propos de l'ARSL</h2>
-    <hr>
-    <p>L’Association de réinsertion sociale du Limousin est une association
-      loi 1901 créée en 1961. Son objet est de lutter contre toutes les
-      formes d’exclusion sociale. Elle accueille des personnes en difficulté,
-      et les accompagne dans leur démarche d’intégration sociale et de citoyenneté.
-      L’ARSL est financée par l’Etat et par le Conseil départemental 87, la ville de Limoges,
-      la Caisse d’allocations familiales (CAF), et d’autres organismes. Elle emploie aujourd’hui
-      une centaine de salariés.
-    </p>
-    <a class="btn btn-primary btn-lg" href="http://www.arsl.eu/">En savoir plus... &raquo;</a>
-  </div>
-  <div class="col-md-4 mb-5">
-    <br>
-    <h2>Contactez-nous</h2>
-    <hr>
-    <address>
-      <strong>Siège social</strong>
-      <br>11, Rue de Dion Bouton
-      <br>87280 Limoges
-      <br>
-    </address>
-    <address>
-      <abbr title="Phone">Téléphone :</abbr>
-      05 55 77 57 77
-      <br>
-      <abbr title="Email">Email :</abbr>
-      <a href="mailto:#"> arsl.sapmpm@wanadoo.fr</a>
-    </address>
-  </div>
-</div>
+      <div>
+         <h2>Les associations</h2>
+         <hr>
+         <p>Afin de lutter contre les exclusions sociales, l'Association de Réinsertion Sociale du Limousin s'est associée avec des associations humanitaires.
+            Celles-ci effectuent des maraudes à l'aide de bénévoles permettant de rencontrer les personnes en difficultés sociales et donc
+            leur proposer une aide. Ces associations et l'ARSL possèdent également des lieux d'accueil proposant de nombreuses prestations sociales. Ces lieux
+            sont indiqués sur la carte ci-dessus.
+         </p>
+         <br>
+      </div>
+      <b-row>
+         <div class="uk-card uk-card-default uk-grid-collapse w-25 m-1 mw-100 col col-lg-2 d-flex align-items-stretch align-content-stretch flex-wrap" v-for="association in filteredList" v-bind:key="association" uk-grid>
+            <div class="card ">
+               <img class="card-img-top card-sm" :src="'http://localhost:1337/' + association.image.url" alt="">
+               <div class="card-body">
+                  <h4 class="card-title">{{ association.nom }}</h4>
+                  <p class="card-text"> {{ association.adressePostale }} </p>
+                  <p class="card-text"> 0{{ association.telephone }} </p>
+               </div>
+               <div class="card-footer">
+                  <a href="#" class="btn btn-primary">VOIR L'ASSOCIATION</a>
+               </div>
+            </div>
+         </div>
+      </b-row>
 
 
 <footer id="foot" class="page-footer font-small blue pt-4">
@@ -143,45 +124,75 @@
 </footer>
 
 
-</div>
+      <footer id="foot" class="page-footer font-small blue pt-4">
+         <div class="container-fluid text-center text-md-left">
+            <div class="row">
+               <div class="col-md-4 mt-md-0 mt-3">
+                  <h5 id="text1" class="text-uppercase font-weight-bold text-md-center">Nous contacter : 05.55.77.57.77</h5>
+               </div>
+               <hr class="clearfix w-100 d-md-none pb-3">
+               <div class="col-md-4 mt-md-0 mt-3">
+                  <h5 id="text2" class="text-uppercase font-weight-bold text-md-center">ARSL
+                     11, RUE DE DION BOUTON
+                     87280 LIMOGES
+                  </h5>
+               </div>
+               <hr class="clearfix w-100 d-md-none pb-3">
+               <div class="col-md-4 mb-md-0 mb-3">
+                  <h5 class="text-uppercase font-weight-bold text-md-center"><a id="link2" href="http://www.arsl.eu/mentions-legales/">Mentions legales</a></h5>
+               </div>
+            </div>
+         </div>
+         <div class="footer-copyright text-center py-3">
+            <a id="link1" href="http://www.arsl.eu/"> Site ARSL</a>
+         </div>
+      </footer>
+
+
+   </div>
 </template>
 
 <script>
-import associationsQuery from '~/apollo/queries/association/associations'
+   import associationsQuery from '~/apollo/queries/association/associations'
+   import maraudesQuery from '~/apollo/queries/maraude/maraudes'
 
 export default {
 
-  data() {
-    return {
-      slide: 0,
-      sliding: null,
-      associations: [],
-      query: ''
-    }
-  },
-  methods: {
-    onSlideStart(slide) {
-      this.sliding = true
-    },
-    onSlideEnd(slide) {
-      this.sliding = false
-    }
-  },
-  apollo: {
-    associations: {
-      prefetch: true,
-      query: associationsQuery
-    }
-  },
-  computed: {
-    // Search system
-    filteredList() {
-      return this.associations.filter(association => {
-        return association.nom.toLowerCase().includes(this.query.toLowerCase())
-      })
-    },
-  }
-}
+     data() {
+       return {
+         slide: 0,
+         sliding: null,
+         associations: [],
+         query: ''
+       }
+     },
+     methods: {
+       onSlideStart(slide) {
+         this.sliding = true
+       },
+       onSlideEnd(slide) {
+         this.sliding = false
+       }
+     },
+     apollo: {
+       associations: {
+         prefetch: true,
+         query: associationsQuery
+       },
+       maraudes: {
+         prefetch: true,
+         query: maraudesQuery
+       }
+     },
+     computed: {
+       // Search system
+       filteredList() {
+         return this.associations.filter(association => {
+           return association.nom.toLowerCase().includes(this.query.toLowerCase())
+         })
+       },
+     }
+   }
 </script>
 
 <style>

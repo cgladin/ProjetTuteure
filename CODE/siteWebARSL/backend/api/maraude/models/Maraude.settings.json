@@ -14,12 +14,15 @@
     "comment": ""
   },
   "attributes": {
-    "trajet": {
-      "model": "trajet",
-      "via": "groupes"
-    },
     "nomGroupe": {
       "type": "string"
+    },
+    "maraudeTerminee": {
+      "type": "boolean"
+    },
+    "trajet": {
+      "model": "trajet",
+      "via": "maraudes"
     },
     "personnes": {
       "collection": "personne",
