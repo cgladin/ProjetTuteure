@@ -1,0 +1,8 @@
+query Personnes{
+  personnes {
+    id
+    nom
+    prenom
+    email
+  }
+}

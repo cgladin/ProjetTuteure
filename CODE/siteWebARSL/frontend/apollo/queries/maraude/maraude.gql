@@ -1,0 +1,8 @@
+query Maraude($id: ID!) {
+  maraude(id: $id) {
+    id
+    nomGroupe
+    personnes
+    maraudeTerminee
+  }
+}
