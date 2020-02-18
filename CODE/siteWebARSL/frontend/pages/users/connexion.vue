@@ -15,7 +15,9 @@
 
                       <div class="uk-margin">
                         <label class="uk-form-label" for="form-stacked-text">Mot de passe</label>
-                        <input class="uk-input" v-model="password" type="password">
+                        <label>
+                          <input class="uk-input" v-model="password" type="password">
+                        </label>
                       </div>
 
                       <div class="uk-margin">
