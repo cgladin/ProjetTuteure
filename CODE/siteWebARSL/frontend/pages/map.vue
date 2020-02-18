@@ -13,25 +13,25 @@
 </template>
 
 <script>
-export default {
-  data: () => ({
-    position: [55.607741796855734, 13.018133640289308],
-    draggable: true,
-    popupContent: "Sentian HQ"
-  }),
-  methods: {
-    logPosition() {
-      console.log(this.position);
+  export default {
+    data: () => ({
+      position: [55.607741796855734, 13.018133640289308],
+      draggable: true,
+      popupContent: "Sentian HQ"
+    }),
+    methods: {
+      logPosition() {
+        console.log(this.position);
+      }
     }
-  }
-};
+  };
 </script>
 
 <style src="leaflet/dist/leaflet.css">
 </style>
 <style >
-.mini-map {
-  width: 100%;
-  height: 600px !important;
-}
+  .mini-map {
+    width: 100%;
+    height: 600px !important;
+  }
 </style>
