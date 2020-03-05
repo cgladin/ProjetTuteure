@@ -14,38 +14,20 @@
     "comment": ""
   },
   "attributes": {
-    "nom": {
+    "pseudo": {
       "type": "string"
     },
-    "prenom": {
-      "type": "string"
-    },
-    "Lieu": {
+    "langueParlee": {
       "type": "text"
-    },
-    "infoFamille": {
-      "type": "richtext"
     },
     "nationalite": {
       "type": "string"
     },
-    "grossesse": {
-      "type": "boolean"
-    },
     "problemeDeSante": {
       "type": "richtext"
     },
-    "autre": {
+    "situationFamiliale": {
       "type": "richtext"
-    },
-    "dejaConnu": {
-      "type": "boolean"
-    },
-    "demandeHebergement": {
-      "type": "boolean"
-    },
-    "demandeAcceptee": {
-      "type": "boolean"
     },
     "situationHerbegement": {
       "type": "text"
