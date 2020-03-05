@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header />
     <div class="row text-center" id="titre">
       <div class="col-sm-3 ml-auto mr-auto">
         <h1>Liste des lieux d'accueil</h1>
@@ -78,13 +79,13 @@
 
 
 <script>
-// Import the lieux query
+
+import Header from '~/components/Header.vue'
 import lieusQuery from '~/apollo/queries/lieu/lieux.gql'
 
 export default {
   data() {
     return {
-      // Initialize an empty restaurants variabkle
       lieus: [],
       query: ''
     }
@@ -96,12 +97,14 @@ export default {
     }
   },
   computed: {
-    // Search system
     filteredList() {
       return this.lieus.filter(lieu => {
         return lieu.nom.toLowerCase().includes(this.query.toLowerCase())
       })
     },
+  },
+  components: {
+    Header
   }
 }
 </script>

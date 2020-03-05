@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header/>
     <header>
       <div>
         <b-carousel
@@ -109,6 +110,7 @@
 <script>
   import associationsQuery from '~/apollo/queries/association/associations'
   import maraudesQuery from '~/apollo/queries/maraude/maraudes'
+  import Header from '~/components/Header.vue'
 
   export default {
 
@@ -145,6 +147,9 @@
           return association.nom.toLowerCase().includes(this.query.toLowerCase())
         })
       },
+    },
+    components: {
+      Header
     }
   }
 </script>

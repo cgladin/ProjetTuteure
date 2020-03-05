@@ -1,5 +1,6 @@
 <template>
    <div>
+     <Header />
       <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@m uk-margin" v-for="association in filteredList" v-bind:key="association" uk-grid>
          <div class="uk-card-media-left uk-cover-container">
             <img :src="'http://localhost:1337/' + association.image.url" class="w-50 h-75" alt="" uk-cover>
@@ -17,13 +18,12 @@
    </div>
 </template>
 <script>
-   // Import the restaurants query
+   import Header from '~/components/Header.vue'
    import associationsQuery from '~/apollo/queries/association/associations'
 
    export default {
      data() {
        return {
-         // Initialize an empty restaurants variabkle
          associations: [],
          query: ''
        }
@@ -35,12 +35,14 @@
        }
      },
      computed: {
-       // Search system
        filteredList() {
          return this.associations.filter(association => {
            return association.nom.toLowerCase().includes(this.query.toLowerCase())
          })
        },
+     },
+     components: {
+       Header
      }
    }
 </script>

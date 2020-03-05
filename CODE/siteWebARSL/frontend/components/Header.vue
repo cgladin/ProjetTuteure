@@ -16,7 +16,7 @@
           <b-collapse id="collapse-1" class="mt-2">
             <b-card class="bg-dark">
               <router-link tag="a" class="nav-link text-white" to="/associations" exact>Associations</router-link>
-              <router-link tag="a" class="nav-link text-white" to="/users/connexion" exact>Se connecter</router-link>
+              <router-link tag="a" class="nav-link text-white" to="/connexion" exact>Se connecter</router-link>
             </b-card>
           </b-collapse>
         </div>
@@ -30,7 +30,7 @@
             <router-link tag="a" class="nav-link text-white" to="/associations" exact>Associations</router-link>
           </li>
           <li class="nav-item align-middle">
-            <router-link tag="a" class="nav-link text-white" to="/users/connexion" exact>Se connecter</router-link>
+            <router-link tag="a" class="nav-link text-white" to="/connexion" exact>Se connecter</router-link>
           </li>
         </ul>
 
