@@ -52,7 +52,7 @@ export default {
         )
         this.loading = false
         this.setUser(response.user)
-        this.$router.push('/Application')
+        this.$router.push('/application')
       } catch (err) {
         this.loading = false
         alert('Nom ou mot de passe incorrect !')
