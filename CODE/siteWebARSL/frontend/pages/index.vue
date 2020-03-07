@@ -65,7 +65,7 @@
       <br>
     </div>
     <b-row>
-      <div class="uk-card uk-card-default uk-grid-collapse w-25 m-1 mw-100 col col-lg-2 d-flex align-items-stretch align-content-stretch flex-wrap" v-for="association in filteredList" v-bind:key="association" uk-grid>
+      <div class="uk-card uk-card-default uk-grid-collapse w-25 m-1 mw-100 col col-lg-2 d-flex align-items-stretch align-content-stretch flex-wrap" v-for="association in filteredList"  uk-grid>
         <div class="card ">
           <img class="card-img-top card-sm" :src="'http://localhost:1337/' + association.image.url" alt="">
           <div class="card-body">
