@@ -21,9 +21,6 @@
         <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
 
-        <div id="preloader">
-            <div class="loader"></div>
-        </div>
         <div class="page-container">
             <div class="sidebar-menu">
                 <div class="sidebar-header">
