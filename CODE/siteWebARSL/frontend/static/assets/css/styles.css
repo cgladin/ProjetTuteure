@@ -8,10 +8,10 @@
     Version: 1.0
 
 ----------------------------------------------
-    
+
     CSS INDEX
     ===================
-  
+
     1. Core Css
     2. Dashboard One
         2.1 Sidebar Menu
@@ -91,6 +91,7 @@
 .main-content {
     width: 100%;
     background: #F3F8FB;
+    border: 1px solid;
 }
 
 .main-content-inner {
@@ -652,6 +653,7 @@
     padding: 0 30px;
     background: #fff;
     position: relative;
+    border-bottom: 1px solid;
 }
 
 .page-title-area:before {

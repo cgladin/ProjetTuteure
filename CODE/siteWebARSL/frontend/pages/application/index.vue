@@ -1,6 +1,5 @@
 <template>
   <div>
-    <html class="no-js" lang="en">
 
     <head>
         <meta charset="utf-8">
@@ -22,7 +21,6 @@
         <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
 
-    <body>
         <div id="preloader">
             <div class="loader"></div>
         </div>
@@ -30,14 +28,14 @@
             <div class="sidebar-menu">
                 <div class="sidebar-header">
                     <div class="logo">
-                        <a href="index.html"><img src="assets/images/icon/logo.png" alt="logo"></a>
+                        <a href="index.html"><img src="logo.png" alt="logo"></a>
                     </div>
                 </div>
                 <div class="main-menu">
                     <div class="menu-inner">
                         <nav>
                             <ul class="metismenu" id="menu">
-                                <li class="active"><a>Tableau de bord</a></li>
+                                <li class="active"><a href="application">Tableau de bord</a></li>
                                 <li class="active"><a href="creerMaraude">Créer une maraude</a></li>
                                 <li class="active"><a href="formulaireMaraude">Formulaire de maraude</a></li>
                                 <li class="active"><a href="rapportMaraude">Rapport de maraude</a></li>
@@ -69,7 +67,7 @@
                                 <img class="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar">
                                 <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Stéphane RAZGALLAH <i class="fa fa-angle-down"></i></h4>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Se déconnecter</a>
+                                    <a class="dropdown-item" href="/">Se déconnecter</a>
                                 </div>
                             </div>
                         </div>
@@ -78,7 +76,6 @@
                     <div class="row mt-5">
                         <div class="col-xl-6">
                             <div class="card">
-                                <div class="card-body">
                                     <h4 class="header-title">Dernières news</h4>
                                     <div class="letest-news mt-5">
                                         <div class="single-post mb-xs-40 mb-sm-40">
@@ -102,7 +99,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -127,9 +123,7 @@
         <script src="assets/js/pie-chart.js"></script>
         <script src="assets/js/plugins.js"></script>
         <script src="assets/js/scripts.js"></script>
-    </body>
 
-    </html>
   </div>
 </template>
 

@@ -37,7 +37,7 @@
                        <div class="menu-inner">
                            <nav>
                                <ul class="metismenu" id="menu">
-                                   <li class="active"><a>Tableau de bord</a></li>
+                                   <li class="active"><a href="application">Tableau de bord</a></li>
                                    <li class="active"><a href="creerMaraude">Créer une maraude</a></li>
                                    <li class="active"><a href="formulaireMaraude">Formulaire de maraude</a></li>
                                    <li class="active"><a href="rapportMaraude">Rapport de maraude</a></li>
