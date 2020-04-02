@@ -84,23 +84,49 @@
                                         <b-form id="formulaireMaraude" @submit="onSubmit" @reset="onReset" v-if="show">
                                               <b-tab active>
 
-                                                 <b-form-group id="input-group-1" label="Pseudo :" label-for="input-1">
-                                                    <b-form-input
-                                                       id="input-1"
-                                                       type="input-1"
-                                                       required
-                                                       v-model="form.pseudo"
-                                                       placeholder="Pseudo..."
-                                                       ></b-form-input>
-                                                 </b-form-group>
+                                                <b-form-group id="input-group-1" name="civilite" label="Civilité :" label-for="civilite">
+                                                      <b-form-radio name="civilite" value="A">
+                                                        <p class="ml-4">Monsieur</p>
+                                                      </b-form-radio>
+                                                      <b-form-radio name="civilite" value="B">
+                                                        <p class="ml-4">Madame</p>
+                                                      </b-form-radio>
+                                                      <b-form-radio name="civilite" value="C">
+                                                        <p class="ml-4">Autre</p>
+                                                      </b-form-radio>
+                                                </b-form-group>
 
-                                                 <b-form-group id="input-group-2" label="Langue parlée :" label-for="input-2">
-                                                    <b-form-input
-                                                       id="input-2"
-                                                       v-model="form.langueParlee"
-                                                       placeholder="Nationalité..."
-                                                       ></b-form-input>
-                                                 </b-form-group>
+                                                <b-form-group id="input-group-2" name="langueParlee" label="Langue(s) parlée(s) :" label-for="langueParlee">
+                                                    <b-form-checkbox-group id="input-group-2" name="langueParlee">
+                                                        <b-form-checkbox value="français">
+                                                          <p class="ml-4">Français</p>
+                                                        </b-form-checkbox>
+                                                        <b-form-checkbox value="allemand">
+                                                          <p class="ml-4">Allemand</p>
+                                                        </b-form-checkbox>
+                                                        <b-form-checkbox value="anglais">
+                                                          <p class="ml-4">Anglais</p>
+                                                        </b-form-checkbox>
+                                                        <b-form-checkbox value="arabe">
+                                                          <p class="ml-4">Arabe</p>
+                                                        </b-form-checkbox>
+                                                        <b-form-checkbox value="chinois">
+                                                          <p class="ml-4">Chinois</p>
+                                                        </b-form-checkbox>
+                                                        <b-form-checkbox value="espagnol">
+                                                          <p class="ml-4">Espagnol</p>
+                                                        </b-form-checkbox>
+                                                        <b-form-checkbox value="italien">
+                                                          <p class="ml-4">Italien</p>
+                                                        </b-form-checkbox>
+                                                        <b-form-checkbox value="japonais">
+                                                          <p class="ml-4">Japonais</p>
+                                                        </b-form-checkbox>
+                                                        <b-form-checkbox value="russe">
+                                                          <p class="ml-4">Russe</p>
+                                                        </b-form-checkbox>
+                                                    </b-form-checkbox-group>
+                                                </b-form-group>
 
                                                  <b-form-group id="input-group-3" label="Lieu de rencontre :" label-for="input-3">
                                                     <b-form-input
@@ -120,31 +146,50 @@
                                                        ></b-form-textarea>
                                                  </b-form-group>
 
-                                                 <b-form-group id="input-group-5" label="Problèmes de santé :" label-for="input-5">
-                                                    <b-form-textarea
-                                                       id="input-5"
-                                                       v-model="form.problemeDeSante"
-                                                       placeholder="Problème de santé..."
-                                                       rows="4"
-                                                       max-rows="8"
-                                                       ></b-form-textarea>
+                                                 <b-form-group id="input-group-5" name="problemeDeSante" label="Problèmes de santé :" label-for="input-5">
+                                                   <b-form-radio name="problemeDeSante" value="oui">
+                                                     <p class="ml-4">Oui</p>
+                                                   </b-form-radio>
+                                                   <b-form-radio name="problemeDeSante" value="non">
+                                                     <p class="ml-4">Non</p>
+                                                   </b-form-radio>
                                                  </b-form-group>
 
-                                                 <b-form-group id="input-group-6" label="Situation d'hébergement :" label-for="input-6">
-                                                       <b-form-radio v-model="selected" name="some-radios" value="A">Option A</b-form-radio>
-                                                       <b-form-radio v-model="selected" name="some-radios" value="B">Option B</b-form-radio>
+                                                 <b-form-group id="input-group-6" name="situationHebergement" label="Situation d'hébergement :" label-for="situationHebergement">
+                                                       <b-form-radio name="situationHebergement" value="A">
+                                                         <p class="ml-4">Dans la rue</p>
+                                                       </b-form-radio>
+                                                       <b-form-radio name="situationHebergement" value="B">
+                                                         <p class="ml-4">Chez un ami</p>
+                                                       </b-form-radio>
+                                                       <b-form-radio name="situationHebergement" value="C">
+                                                         <p class="ml-4">Dans un centre d'hébergement</p>
+                                                       </b-form-radio>
+                                                       <b-form-radio name="situationHebergement" value="D">
+                                                         <p class="ml-4">Chez sa famille</p>
+                                                       </b-form-radio>
+                                                       <b-form-radio name="situationHebergement" value="E">
+                                                         <p class="ml-4">Dans un établissement publique</p>
+                                                       </b-form-radio>
+                                                       <b-form-radio name="situationHebergement" value="E">
+                                                         <p class="ml-4">Possède un logement</p>
+                                                       </b-form-radio>
                                                  </b-form-group>
-                                                 <b-form-group >
 
-                                                    <b-form-textarea
-                                                       id="input-6"
-                                                       v-model="form.autre"
-                                                       placeholder="Situation d'hébergement..."
-                                                       rows="4"
-                                                       max-rows="8"
-                                                       ></b-form-textarea>
+                                                 <b-form-group id="input-group-7" name="age" label="Age :" label-for="age">
+                                                       <b-form-radio class="mr-5" name="age" value="A">
+                                                         <p class="ml-4">Moins de 18 ans</p>
+                                                       </b-form-radio>
+                                                       <b-form-radio name="age" value="B">
+                                                         <p class="ml-4">18 à 30 ans</p>
+                                                       </b-form-radio>
+                                                       <b-form-radio name="age" value="C">
+                                                         <p class="ml-4">30 à 50 ans</p>
+                                                       </b-form-radio>
+                                                       <b-form-radio name="age" value="D">
+                                                         <p class="ml-4">Plus de 50 ans</p>
+                                                       </b-form-radio>
                                                  </b-form-group>
-
                                               </b-tab>
                                            <div id="valider" class="d-flex justify-content-center ">
                                               <b-button type="submit" variant="primary">Valider le formulaire</b-button>
