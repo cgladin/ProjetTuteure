@@ -5,6 +5,7 @@ query Associations {
     description
     adressePostale
     telephone
+    siteWeb
     image{
       url
     }

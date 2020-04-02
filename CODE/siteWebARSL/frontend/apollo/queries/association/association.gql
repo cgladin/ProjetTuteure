@@ -5,6 +5,7 @@ query Association($id: ID!) {
     description
     adressePostale
     telephone
+    siteWeb
     image{
       url
     }

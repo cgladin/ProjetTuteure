@@ -10,7 +10,7 @@
             <div class="uk-card-body">
                <h3 class="uk-card-title">{{ association.nom }}</h3>
                <p>{{ association.description }}</p>
-               <router-link :to="{ name: 'associations-id', params: { id: association.id }}" tag="a" class="uk-button uk-button-primary">Voir l'association
+               <router-link :to="{ name: 'associations-id', params: { id: association.id }}" tag="a" class="uk-button uk-button-primary"><a href={{ association.siteWeb }}>Voir l'association</a>
                </router-link>
             </div>
          </div>
